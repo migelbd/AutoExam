@@ -1,0 +1,11 @@
+Intrebarea 2
+Intrebarea aceasta in chestionare:
+% 1.2. CONDUCATORII DE VEHICULE SI OBLIGATIILE ACESTORA
+Intrebarea 19 (pag. 10)
+Codul intrebarii: 2.19
+
+Вопрос 2
+Этот же вопрос в шаблонах:
+% 1.2. ВОДИТЕЛИ ТРАНСПОРТНЫХ СРЕДСТВ И ИХ ОБЯЗАННОСТИ
+Вопрос 19 (стр. 10)
+Код вопроса: 2.19

@@ -1,0 +1,11 @@
+Intrebarea 13
+Intrebarea aceasta in chestionare:
+% 4.5. CIRCULATIA IN INTERSECTII SI TRAVERSAREA CAILOR FERATE. D. Intersectiile drumurilor de semnificatie echivalenta
+Intrebarea 1 (pag. 88)
+Codul intrebarii: 16.1
+
+Вопрос 13
+Этот же вопрос в шаблонах:
+% 4.5. ПРОЕЗД ПЕРЕКРЁСТКОВ И ДВИЖЕНИЕ ЧЕРЕЗ ЖЕЛЕЗНОДОРОЖНЫЕ ПУТИ. D. Перекрёстки равнозначных дорог
+Вопрос 1 (стр. 88)
+Код вопроса: 16.1

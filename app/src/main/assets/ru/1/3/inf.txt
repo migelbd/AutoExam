@@ -1,0 +1,11 @@
+Intrebarea 3
+Intrebarea aceasta in chestionare:
+% 2.1. DISPOZITII GENERALE. % 2.2. INDICATOARELE RUTIERE. A. Dispozitii generale. Semnificatia indicatoarelor rutiere
+Intrebarea 29 (pag. 17)
+Codul intrebarii: 3.29
+
+Вопрос 3
+Этот же вопрос в шаблонах:
+% 2.1. ОБЩИЕ ПОЛОЖЕНИЯ. % 2.2. ДОРОЖНЫЕ ЗНАКИ. А. Общие положения. Значение дорожных знаков
+Вопрос 29 (стр. 17)
+Код вопроса: 3.29

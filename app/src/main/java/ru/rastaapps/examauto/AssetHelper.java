@@ -6,6 +6,8 @@ import android.graphics.drawable.Drawable;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by MigeL on 28.08.2016.
@@ -60,7 +62,7 @@ public class AssetHelper {
         return str;
     }
 
-    public int getCountAnswers(int _question, int _ticket){
+    public int getCountAnswers(int _ticket, int _question){
 
         int files_count = 0;
         try {
@@ -73,7 +75,7 @@ public class AssetHelper {
     }
 
     public Drawable getImg(int _ticket, int _question){
-        Drawable d;
+        Drawable d = null;
         try {
             InputStream ims = ctx.getAssets().open("ru/" + _ticket + "/" + _question + "/" + "img.jpg");
 
@@ -81,13 +83,13 @@ public class AssetHelper {
 
         }
         catch(IOException ex) {
-            InputStream ims = null;
-            try {
-                ims = ctx.getAssets().open("img_def.png");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            d = Drawable.createFromStream(ims, null);
+//            InputStream ims = null;
+//            try {
+//                ims = ctx.getAssets().open("img_def.png");
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            d = Drawable.createFromStream(ims, null);
 
 
         }
@@ -156,5 +158,23 @@ public class AssetHelper {
         }
     }
 
+
+    public ArrayList<String> getListAnswers(int _ticket, int _question){
+        ArrayList<String> list = new ArrayList<>();
+        int count = getCountAnswers(_ticket, _question);
+        for(int i = 0;i<count;i++){
+            list.add(i + 1 + ". " + getAnswer(_ticket, _question, i + 1));
+        }
+        return list;
+    }
+
+    public int getTicketRandom(){
+        Random r = new Random();
+        return r.nextInt(34) + 1;
+    }
+    public int getQuestRandom(){
+        Random r = new Random();
+        return r.nextInt(19) + 1;
+    }
 
 }

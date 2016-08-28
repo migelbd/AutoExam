@@ -1,0 +1,11 @@
+Intrebarea 15
+Intrebarea aceasta in chestionare:
+% 4.6. OPRIREA SI STATIONAREA VOLUNTARA PARCAREA.
+Intrebarea 10 (pag. 101)
+Codul intrebarii: 18.10
+
+Вопрос 15
+Этот же вопрос в шаблонах:
+% 4.6. ОСТАНОВКА И СТОЯНКА. ПАРКОВКА
+Вопрос 10 (стр. 101)
+Код вопроса: 18.10

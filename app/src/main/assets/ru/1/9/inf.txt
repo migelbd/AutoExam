@@ -1,0 +1,11 @@
+Intrebarea 9
+Intrebarea aceasta in chestionare:
+% 4.3. VITEZA DE DEPLASARE SI SPATIUL INTRE VEHICULE
+Intrebarea 1 (pag. 63)
+Codul intrebarii: 11.1
+
+Вопрос 9
+Этот же вопрос в шаблонах:
+% 4.3. СКОРОСТЬ ДВИЖЕНИЯ И ДИСТАНЦИЯ МЕЖДУ ТРАНСПОРТНЫМИ СРЕДСТВАМИ
+Вопрос 1 (стр. 63)
+Код вопроса: 11.1

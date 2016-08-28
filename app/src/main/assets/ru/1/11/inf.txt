@@ -1,0 +1,11 @@
+Intrebarea 11
+Intrebarea aceasta in chestionare:
+% 4.5. CIRCULATIA IN INTERSECTII SI TRAVERSAREA CAILOR FERATE. A. Intersectii cu circulatie dirijata
+Intrebarea 3 (pag. 73)
+Codul intrebarii: 13.3
+
+Вопрос 11
+Этот же вопрос в шаблонах:
+% 4.5. ПРОЕЗД ПЕРЕКРЁСТКОВ И ДВИЖЕНИЕ ЧЕРЕЗ ЖЕЛЕЗНОДОРОЖНЫЕ ПУТИ. A. Регулируемые перекрёстки
+Вопрос 3 (стр. 73)
+Код вопроса: 13.3

@@ -1,0 +1,11 @@
+Intrebarea 5
+Intrebarea aceasta in chestionare:
+% 2.3. MARCAJELE RUTIERE SI PARTICULARITATILE DE APLICARE A ACESTORA
+Intrebarea 7 (pag. 31)
+Codul intrebarii: 5.7
+
+Вопрос 5
+Этот же вопрос в шаблонах:
+% 2.3. ДОРОЖНАЯ РАЗМЕТКА И ОСОБЕННОСТИ ЕЁ ПРИМЕНЕНИЯ
+Вопрос 7 (стр. 31)
+Код вопроса: 5.7

@@ -1,0 +1,11 @@
+Intrebarea 8
+Intrebarea aceasta in chestionare:
+% 4.1. INCEPUTUL DEPLASARII SI SCHIMBAREA DIRECTIEI DE MERS.
+Intrebarea 1 (pag. 53)
+Codul intrebarii: 9.1
+
+Вопрос 8
+Этот же вопрос в шаблонах:
+% 4.1. НАЧАЛО ДВИЖЕНИЯ И ИЗМЕНЕНИЕ НАПРАВЛЕНИЯ ДВИЖЕНИЯ
+Вопрос 1 (стр. 53)
+Код вопроса: 9.1

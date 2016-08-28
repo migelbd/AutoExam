@@ -1,5 +1,79 @@
 <resources>
-    <string name="app_name">Examauto</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="app_name">ПДД Молдова</string>
+    <string name="action_settings">Настройки</string>
+
+    <string name="page_title_pdd">ПДД</string>
+    <string name="page_title_exam">Экзамен</string>
+    <string name="text_spin">Выберите билет</string>
+    <string name="btn_start">Начать</string>
+    <string name="btn_mix_start">Микс</string>
+    <string name="info_disp">Данная имитация предназначена для контроля и усовершенствования знаний, приобретённых на курсах подготовки водителей, либо при самостоятельном изучении.</string>
+    <string name="btn_confirm">Подтвердить</string>
+    <string-array name="spinner_titles_ticket">
+        <item>Билет 1</item>
+        <item>Билет 2</item>
+        <item>Билет 3</item>
+        <item>Билет 4</item>
+        <item>Билет 5</item>
+        <item>Билет 6</item>
+        <item>Билет 7</item>
+        <item>Билет 8</item>
+        <item>Билет 9</item>
+        <item>Билет 10</item>
+        <item>Билет 11</item>
+        <item>Билет 12</item>
+        <item>Билет 13</item>
+        <item>Билет 14</item>
+        <item>Билет 15</item>
+        <item>Билет 16</item>
+        <item>Билет 17</item>
+        <item>Билет 18</item>
+        <item>Билет 19</item>
+        <item>Билет 20</item>
+        <item>Билет 21</item>
+        <item>Билет 22</item>
+        <item>Билет 23</item>
+        <item>Билет 24</item>
+        <item>Билет 25</item>
+        <item>Билет 26</item>
+        <item>Билет 27</item>
+        <item>Билет 28</item>
+        <item>Билет 29</item>
+        <item>Билет 30</item>
+        <item>Билет 31</item>
+        <item>Билет 32</item>
+        <item>Билет 33</item>
+        <item>Билет 34</item>
+        <item>Билет 35</item>
+
+    </string-array>
+    <string-array name="spinner_titles_quest">
+    <item>Вопрос 1</item>
+    <item>Вопрос 2</item>
+    <item>Вопрос 3</item>
+    <item>Вопрос 4</item>
+    <item>Вопрос 5</item>
+    <item>Вопрос 6</item>
+    <item>Вопрос 7</item>
+    <item>Вопрос 8</item>
+    <item>Вопрос 9</item>
+    <item>Вопрос 10</item>
+    <item>Вопрос 11</item>
+    <item>Вопрос 12</item>
+    <item>Вопрос 13</item>
+    <item>Вопрос 14</item>
+    <item>Вопрос 15</item>
+    <item>Вопрос 16</item>
+    <item>Вопрос 17</item>
+    <item>Вопрос 18</item>
+    <item>Вопрос 19</item>
+    <item>Вопрос 20</item>
+    </string-array>
+    <string name="txt_good">Правильно:</string>
+    <string name="txt_bad">Ощибок:</string>
+    <string name="txt_skip">Пропущено:</string>
+    <string name="snack_good">Правильно</string>
+    <string name="snack_bad">Не правильно</string>
+    <string name="txt_question">Вопрос</string>
+
 </resources>

@@ -1,0 +1,11 @@
+Intrebarea 16
+Intrebarea aceasta in chestionare:
+% 4.10. REGULI PRIVIND CIRCULATIA VEHICULELOR CU REGIM PRIORITAR DE CIRCULATIE SI OBLIGATIILE CELORLALTI CONDUCATORI DE VEHICULE
+Intrebarea 1 (pag. 113)
+Codul intrebarii: 24.1
+
+Вопрос 16
+Этот же вопрос в шаблонах:
+% 4.10. ТРАНСПОРТНЫЕ СРЕДСТВА С ПРИОРИТЕТНЫМ РЕЖИМОМ ДВИЖЕНИЯ И ОБЯЗАННОСТИ ДРУГИХ ВОДИТЕЛЕЙ
+Вопрос 1 (стр. 113)
+Код вопроса: 24.1

@@ -1,0 +1,11 @@
+Intrebarea 10
+Intrebarea aceasta in chestionare:
+% 4.4. DEPASIREA SI TRECEREA IN SENSURI OPUSE
+Intrebarea 1 (pag. 67)
+Codul intrebarii: 12.1
+
+Вопрос 10
+Этот же вопрос в шаблонах:
+% 4.4. ОБГОН И ВСТРЕЧНЫЙ РАЗЪЕЗД
+Вопрос 1 (стр. 67)
+Код вопроса: 12.1

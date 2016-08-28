@@ -1,0 +1,11 @@
+Intrebarea 12
+Intrebarea aceasta in chestionare:
+% 4.5. CIRCULATIA IN INTERSECTII SI TRAVERSAREA CAILOR FERATE. С. Intersectiile in care drumul cu prioritate isi schimba directia
+Intrebarea 1 (pag. 80)
+Codul intrebarii: 15.1
+
+Вопрос 12
+Этот же вопрос в шаблонах:
+% 4.5. ПРОЕЗД ПЕРЕКРЁСТКОВ И ДВИЖЕНИЕ ЧЕРЕЗ ЖЕЛЕЗНОДОРОЖНЫЕ ПУТИ. C. Перекрёстки, на которых главная дорога меняет направление
+Вопрос 1 (стр. 80)
+Код вопроса: 15.1
