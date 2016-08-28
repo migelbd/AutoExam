@@ -48,26 +48,26 @@
 
     </string-array>
     <string-array name="spinner_titles_quest">
-    <item>Вопрос 1</item>
-    <item>Вопрос 2</item>
-    <item>Вопрос 3</item>
-    <item>Вопрос 4</item>
-    <item>Вопрос 5</item>
-    <item>Вопрос 6</item>
-    <item>Вопрос 7</item>
-    <item>Вопрос 8</item>
-    <item>Вопрос 9</item>
-    <item>Вопрос 10</item>
-    <item>Вопрос 11</item>
-    <item>Вопрос 12</item>
-    <item>Вопрос 13</item>
-    <item>Вопрос 14</item>
-    <item>Вопрос 15</item>
-    <item>Вопрос 16</item>
-    <item>Вопрос 17</item>
-    <item>Вопрос 18</item>
-    <item>Вопрос 19</item>
-    <item>Вопрос 20</item>
+        <item>Вопрос 1</item>
+        <item>Вопрос 2</item>
+        <item>Вопрос 3</item>
+        <item>Вопрос 4</item>
+        <item>Вопрос 5</item>
+        <item>Вопрос 6</item>
+        <item>Вопрос 7</item>
+        <item>Вопрос 8</item>
+        <item>Вопрос 9</item>
+        <item>Вопрос 10</item>
+        <item>Вопрос 11</item>
+        <item>Вопрос 12</item>
+        <item>Вопрос 13</item>
+        <item>Вопрос 14</item>
+        <item>Вопрос 15</item>
+        <item>Вопрос 16</item>
+        <item>Вопрос 17</item>
+        <item>Вопрос 18</item>
+        <item>Вопрос 19</item>
+        <item>Вопрос 20</item>
     </string-array>
     <string name="txt_good">Правильно:</string>
     <string name="txt_bad">Ощибок:</string>
@@ -75,5 +75,6 @@
     <string name="snack_good">Правильно</string>
     <string name="snack_bad">Не правильно</string>
     <string name="txt_question">Вопрос</string>
+    <string name="action_skip">Пропустить</string>
 
 </resources>

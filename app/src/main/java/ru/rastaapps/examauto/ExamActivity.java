@@ -1,9 +1,13 @@
 package ru.rastaapps.examauto;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.os.CountDownTimer;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +23,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class ExamActivity extends AppCompatActivity {
@@ -26,7 +31,10 @@ public class ExamActivity extends AppCompatActivity {
     private static final int CODE_GOOD = 100;
     private static final int CODE_BAD = 200;
     private static final int CODE_SKIP = 300;
+    private static final int CODE_SPIN_SELECTED = 400;
     private final String TAG = "ExamActivity";
+    CountDownTimer cdt;
+    private long time = 1800000;
     AssetHelper ahelp;
     TextView tvQuestion, txtGood, txtSkip, txtBad;
 
@@ -57,8 +65,9 @@ public class ExamActivity extends AppCompatActivity {
        spinner = (Spinner)findViewById(R.id.spin_questions);
         Intent intent = getIntent();
         MODE_MIX = intent.getBooleanExtra("mode", false);
-        if(MODE_MIX){
-
+        if(MODE_MIX == true){
+            TICKETS = new int[19];
+            QUESTIONS = new int[19];
             for(int i = 0;i<19;i++){
                 TICKETS[i] = ahelp.getTicketRandom();
             }
@@ -76,7 +85,9 @@ public class ExamActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                QUESTION_NUMBER = i + 1;
+                QUESTION_COUNT = i + 1;
+
+                NextConfig(CODE_SPIN_SELECTED);
                 Log.i(TAG, "Selected question" + (i + 1));
             }
 
@@ -91,13 +102,27 @@ public class ExamActivity extends AppCompatActivity {
         ImgLay = (RelativeLayout)findViewById(R.id.ImgLayout);
         listAnswers.setOnItemClickListener(listener);
 
+        cdt = new CountDownTimer(time, 1000) {
+            @Override
+            public void onTick(long l) {
+                SimpleDateFormat sd = new SimpleDateFormat("mm:ss");
+                ActionBar b = getSupportActionBar();
+                b.setTitle(sd.format(l));
+            }
+
+            @Override
+            public void onFinish() {
+                ShowDialog("Упс..", "Закончилось время");
+            }
+        };
+        cdt.start();
         getQuestionToLayout(TICKET_NUMBER, QUESTION_NUMBER);
     }
 
     private void getQuestionToLayout(int _ticket, int _question){
 
 
-
+        spinner.setSelection(QUESTION_COUNT - 1);
         Log.i(TAG, "Getting question");
         ImageView img = new ImageView(this);
         Drawable d = ahelp.getImg(_ticket, _question);
@@ -107,6 +132,8 @@ public class ExamActivity extends AppCompatActivity {
             img.setMinimumHeight(650);
 
             ImgLay.addView(img);
+        } else {
+            ImgLay.removeAllViews();
         }
 
         tvQuestion.setText(ahelp.getQuestion(_ticket, _question));
@@ -137,7 +164,7 @@ public class ExamActivity extends AppCompatActivity {
                 Snackbar snack = Snackbar.make(listAnswers, getResources().getString(R.string.snack_good), Snackbar.LENGTH_SHORT);
                 View v = snack.getView();
                 TextView text = (TextView)v.findViewById(android.support.design.R.id.snackbar_text);
-                text.setTextColor(Color.GREEN);
+                text.setTextColor(getResources().getColor(R.color.colorGood));
                 snack.show();
 
                 NextConfig(CODE_GOOD);
@@ -147,7 +174,7 @@ public class ExamActivity extends AppCompatActivity {
                 Snackbar snack = Snackbar.make(listAnswers, getResources().getString(R.string.snack_bad), Snackbar.LENGTH_SHORT);
                 View v = snack.getView();
                 TextView text = (TextView)v.findViewById(android.support.design.R.id.snackbar_text);
-                text.setTextColor(Color.RED);
+                text.setTextColor(getResources().getColor(R.color.colorBad));
                 snack.show();
 
 
@@ -189,7 +216,7 @@ public class ExamActivity extends AppCompatActivity {
             } else {
                 QUESTION_NUMBER = QUESTION_COUNT;
             }
-            getQuestionToLayout(TICKET_NUMBER, QUESTION_NUMBER);
+
         } else if(CODE == CODE_BAD){
             bad_answers_count += 1;
             QUESTION_COUNT += 1;
@@ -200,7 +227,7 @@ public class ExamActivity extends AppCompatActivity {
             } else {
                 QUESTION_NUMBER = QUESTION_COUNT;
             }
-            getQuestionToLayout(TICKET_NUMBER, QUESTION_NUMBER);
+
         } else if(CODE == CODE_SKIP){
             skip_answers_count += 1;
             QUESTION_COUNT += 1;
@@ -211,9 +238,52 @@ public class ExamActivity extends AppCompatActivity {
             } else {
                 QUESTION_NUMBER = QUESTION_COUNT;
             }
-            getQuestionToLayout(TICKET_NUMBER, QUESTION_NUMBER);
+
+        } else if(CODE == CODE_SPIN_SELECTED){
+            if(MODE_MIX){
+                QUESTION_NUMBER = QUESTIONS[QUESTION_COUNT - 1];
+                TICKET_NUMBER = TICKETS[QUESTION_COUNT - 1];
+
+            } else {
+                QUESTION_NUMBER = QUESTION_COUNT;
+            }
         } else {
             Log.e(TAG, "Error CODE");
         }
+
+
+
+        if(QUESTION_COUNT > 20){
+            ShowDialog("Упс..", "Вы еще не ответили на некоторые вопросы.");
+        } else if(good_answers_count >= 17){
+            Intent i = new Intent(this, ResultActivity.class);
+            i.putExtra("result", true);
+            i.putExtra("good", good_answers_count);
+            i.putExtra("bad", bad_answers_count);
+            i.putExtra("skip", skip_answers_count);
+            startActivity(i);
+            finish();
+        } else if(bad_answers_count > 3){
+            Intent i = new Intent(this, ResultActivity.class);
+            i.putExtra("result", false);
+            i.putExtra("good", good_answers_count);
+            i.putExtra("bad", bad_answers_count);
+            i.putExtra("skip", skip_answers_count);
+            startActivity(i);
+            finish();
+        } else {
+            getQuestionToLayout(TICKET_NUMBER, QUESTION_NUMBER);
+        }
+
+    }
+
+    private void ShowDialog(String titile, String msg){
+        AlertDialog.Builder adb = new AlertDialog.Builder(this);
+        adb.setTitle(titile);
+        adb.setMessage(msg);
+        adb.setNeutralButton("OK", null);
+
+
+        adb.show();
     }
 }
