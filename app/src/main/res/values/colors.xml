@@ -7,4 +7,6 @@
     <color name="colorGood">#8BC34A</color>
     <color name="colorBad">#E53935</color>
     <color name="colorSkip">#FBC02D</color>
+    <color name="colorBtnQuestion">#BDBDBD</color>
+    <color name="colorBtnSelected">#42A5F5</color>
 </resources>
