@@ -33,6 +33,7 @@ public class ExamActivity extends AppCompatActivity {
     private static final int CODE_BAD = 200;
     private static final int CODE_SKIP = 300;
     private static final int CODE_BTN_SELECTED = 400;
+    private int[] STATE_COLOR_BTNS = new int[20];
     //ИД действия при смене вопроса
 
     private boolean SKIP_Q_MODE = false;
@@ -53,6 +54,8 @@ public class ExamActivity extends AppCompatActivity {
     private int bad_answers_count = 0; //счетчики правильных, не правильных и пропущеных вопросов
 
     private boolean MODE_MIX = false;
+    private int LAST_SELECT_BTN_COLOR;
+    private int LAST_SELECT_BTN = 0;
     private int QUESTION_COUNT = 1; //текущий вопрос
     private int QUESTION_NUMBER = 1; //номер вопроса в билете
     private int TICKET_NUMBER = 1; //номер билета
@@ -62,7 +65,7 @@ public class ExamActivity extends AppCompatActivity {
     private int[] TICKETS; //масив номеров билетов для режима Микс
     private int[] QUESTIONS; //масив номеров вопросов
 
-    private boolean[] ANSWER_OK_QUESTIONS = new boolean[19];
+    private boolean[] ANSWER_OK_QUESTIONS = new boolean[20];
 
     View vHeader;
     private HorizontalScrollView hScroll;
@@ -136,9 +139,10 @@ public class ExamActivity extends AppCompatActivity {
         for(int i = 0;i<QUESTIONS_BTNS.length;i++){  //задает слушателя действия для кнопок
             ((Button)findViewById(QUESTIONS_BTNS[i])).setOnClickListener(bt_listener);
             ((Button)findViewById(QUESTIONS_BTNS[i])).setBackgroundColor(getResources().getColor(R.color.colorBtnQuestion));
+            STATE_COLOR_BTNS[i] = getResources().getColor(R.color.colorBtnQuestion);
         }
-
-
+        STATE_COLOR_BTNS[0] = getResources().getColor(R.color.colorBtnQuestion);
+        SetQuestionButtonColor(QUESTION_COUNT, getResources().getColor(R.color.colorBtnSelected));
         getQuestionToLayout(TICKET_NUMBER, QUESTION_NUMBER);
     }
 
@@ -187,6 +191,8 @@ public class ExamActivity extends AppCompatActivity {
             Log.i(TAG, "QUESTION: " + QUESTION_NUMBER + " TICKET: " + TICKET_NUMBER + " Q_COUNT:" + QUESTION_COUNT);
             int goodAns = assetHelper.getGoodAns(TICKET_NUMBER, QUESTION_NUMBER);
 
+
+
             setAnswerToQuestion(true, QUESTION_COUNT);
 
             if (i != 0) {
@@ -232,8 +238,13 @@ public class ExamActivity extends AppCompatActivity {
     private View.OnClickListener bt_listener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            for(int i = 0;i<19;i++){
-                SetQuestionButtonColor(i + 1, getResources().getColor(R.color.colorBtnQuestion));
+
+
+            if(QUESTION_COUNT != LAST_SELECT_BTN){
+                SetBtnnColor(QUESTION_COUNT, GetLastBtnColor(QUESTION_COUNT));
+            } else {
+                LAST_SELECT_BTN = QUESTION_COUNT;
+                SetQuestionButtonColor(QUESTION_COUNT, getResources().getColor(R.color.colorBtnSelected));
             }
 
             switch (view.getId()){
@@ -286,7 +297,7 @@ public class ExamActivity extends AppCompatActivity {
         listAnswers.removeHeaderView(vHeader); //очищает экран для следующего вопроса
         if(CODE == CODE_GOOD){
             //верный ответ
-            SetQuestionButtonColor(QUESTION_COUNT, getResources().getColor(R.color.colorGood)); //для кнопки задается цвет
+            SetBtnnColor(QUESTION_COUNT, getResources().getColor(R.color.colorGood)); //для кнопки задается цвет
             if(!SKIP_Q_MODE) { //проверка если в режиме отвтеа на пропущенные вопросы
                 QUESTION_COUNT += 1;
             } else {
@@ -318,7 +329,7 @@ public class ExamActivity extends AppCompatActivity {
 
         } else if(CODE == CODE_BAD){
 
-            SetQuestionButtonColor(QUESTION_COUNT, getResources().getColor(R.color.colorBad));
+            SetBtnnColor(QUESTION_COUNT, getResources().getColor(R.color.colorBad));
             if(!SKIP_Q_MODE){
                 QUESTION_COUNT += 1;
             } else {
@@ -347,7 +358,7 @@ public class ExamActivity extends AppCompatActivity {
             }
 
         } else if(CODE == CODE_SKIP){
-            SetQuestionButtonColor(QUESTION_COUNT, getResources().getColor(R.color.colorSkip));
+            SetBtnnColor(QUESTION_COUNT, getResources().getColor(R.color.colorSkip));
             SetSkipQuestions(QUESTION_COUNT); //запись в масив номера пропущенного вопроса
             skip_answers_count += 1;
             QUESTION_COUNT += 1;
@@ -383,8 +394,12 @@ public class ExamActivity extends AppCompatActivity {
         }
 
         if(QUESTION_COUNT < 20) hScroll.smoothScrollTo(GetButtonX(QUESTION_COUNT), 0);
-        if(isAnswerToQuestion(QUESTION_COUNT)) listAnswers.setEnabled(false);
-        else listAnswers.setEnabled(true);
+        if(QUESTION_COUNT != 21){
+            if(isAnswerToQuestion(QUESTION_COUNT)) listAnswers.setEnabled(false);
+            else listAnswers.setEnabled(true);
+        }
+
+
         CheckResult(); // проверка результатов
 
 
@@ -438,6 +453,20 @@ public class ExamActivity extends AppCompatActivity {
     }
     private void SetQuestionButtonColor(int btn, int color){
         ((Button)findViewById(QUESTIONS_BTNS[btn - 1])).setBackgroundColor(color);
+
+    }
+
+    private void SetBtnnColor(int btn, int color){
+        ((Button)findViewById(QUESTIONS_BTNS[btn - 1])).setBackgroundColor(color);
+        STATE_COLOR_BTNS[btn - 1] = color;
+    }
+    private int GetLastBtnColor(int btn){
+        if(btn != 21){
+            return STATE_COLOR_BTNS[btn - 1];
+        } else {
+            return 0;
+        }
+
     }
 
     private boolean isAnswerToQuestion(int _question){
