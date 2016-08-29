@@ -49,6 +49,8 @@ public class MasterActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+        Intent i = getIntent();
+        Helper.getInstance().setSECRET_CODE(i.getBooleanExtra("secretcode", false));
 
 
 
