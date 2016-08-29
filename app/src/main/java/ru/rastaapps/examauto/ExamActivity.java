@@ -112,7 +112,7 @@ public class ExamActivity extends AppCompatActivity {
 
 
                 if(BuildConfig.DEBUG || Helper.getInstance().isSECRET_CODE()){
-                    b.setTitle(sd.format(l) + " OK:" + assetHelper.getGoodAns(TICKET_NUMBER, QUESTION_NUMBER) + " T:" + TICKET_NUMBER);
+                    b.setTitle(sd.format(l) + " OK:" + assetHelper.getGoodAns(TICKET_NUMBER, QUESTION_NUMBER) + " T:" + TICKET_NUMBER + " Q:" + QUESTION_NUMBER);
                 } else {
                     b.setTitle(sd.format(l));
                 }
@@ -176,11 +176,8 @@ public class ExamActivity extends AppCompatActivity {
     private AdapterView.OnItemClickListener listener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            if(BuildConfig.DEBUG){
-
-                Log.d(TAG, "ID=" + i);
-            }
-
+            
+            Log.i(TAG, "QUESTION: " + QUESTION_NUMBER + " TICKET: " + TICKET_NUMBER + " Q_COUNT:" + QUESTION_COUNT);
             int goodAns = assetHelper.getGoodAns(TICKET_NUMBER, QUESTION_NUMBER);
             if (i != 0) {
                 if(i == goodAns){ //проверка правильного ответа
