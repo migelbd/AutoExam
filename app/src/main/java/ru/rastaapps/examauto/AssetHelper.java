@@ -83,13 +83,6 @@ public class AssetHelper {
 
         }
         catch(IOException ex) {
-//            InputStream ims = null;
-//            try {
-//                ims = ctx.getAssets().open("img_def.png");
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            d = Drawable.createFromStream(ims, null);
 
 
         }

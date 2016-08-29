@@ -154,10 +154,7 @@
             </LinearLayout>
         </HorizontalScrollView>
 
-        <RelativeLayout
-            android:id="@+id/ImgLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"></RelativeLayout>
+
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -165,23 +162,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
-            <TextView
-                android:padding="5dp"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#000000"
-                android:text="Large Text"
-                android:id="@+id/tvQuestion" />
+
 
             <ListView
                 android:padding="3dp"
-
+                style="@style/ListVTheme"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/lvAnswers"
-                android:choiceMode="singleChoice" />
+                android:choiceMode="singleChoice"
+                 />
         </LinearLayout>
 
     </LinearLayout>

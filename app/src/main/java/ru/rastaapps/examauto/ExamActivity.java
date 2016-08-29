@@ -3,13 +3,16 @@ package ru.rastaapps.examauto;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.CountDownTimer;
+import android.support.annotation.Dimension;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -61,6 +64,7 @@ public class ExamActivity extends AppCompatActivity {
     private int[] TICKETS;
     private int[] QUESTIONS;
 
+    View vHeader;
     private HorizontalScrollView hScroll;
     private ArrayList<Integer> skiping_questions;
 
@@ -74,7 +78,7 @@ public class ExamActivity extends AppCompatActivity {
         setContentView(R.layout.activity_exam);
         TICKET_NUMBER = Helper.getInstance().getTICKET_NUMBER();
         ahelp = new AssetHelper(this, "ru");
-        tvQuestion = (TextView)findViewById(R.id.tvQuestion);
+
         hScroll = (HorizontalScrollView)findViewById(R.id.hScroll);
         Intent intent = getIntent();
         MODE_MIX = intent.getBooleanExtra("mode", false);
@@ -98,7 +102,7 @@ public class ExamActivity extends AppCompatActivity {
 
         listAnswers = (ListView)findViewById(R.id.lvAnswers);
 
-        ImgLay = (RelativeLayout)findViewById(R.id.ImgLayout);
+
         listAnswers.setOnItemClickListener(listener);
 
         cdt = new CountDownTimer(time, 1000) {
@@ -135,9 +139,9 @@ public class ExamActivity extends AppCompatActivity {
     private void getQuestionToLayout(int _ticket, int _question){
 
 
-
-
-
+        vHeader = getLayoutInflater().inflate(R.layout.lv_header, null);
+        ImgLay = (RelativeLayout)vHeader.findViewById(R.id.ImgLayout);
+        tvQuestion = (TextView)vHeader.findViewById(R.id.tvQuestion);
 
         Log.i(TAG, "Getting question");
         ImageView img = new ImageView(this);
@@ -145,7 +149,9 @@ public class ExamActivity extends AppCompatActivity {
         if(d != null){
             img.setImageDrawable(d);
             img.setMinimumWidth(getWindowManager().getDefaultDisplay().getWidth());
-            img.setMinimumHeight(650);
+
+
+            img.setMinimumHeight(300);
 
             ImgLay.addView(img);
         } else {
@@ -157,6 +163,8 @@ public class ExamActivity extends AppCompatActivity {
         arrayAns = ahelp.getListAnswers(_ticket, _question);
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayAns);
         listAnswers.setAdapter(adapter);
+
+        listAnswers.addHeaderView(vHeader);
 
         Log.i(TAG, "OK question");
 
@@ -174,29 +182,30 @@ public class ExamActivity extends AppCompatActivity {
             }
 
 
+            if (i != 0) {
+                if(i == ahelp.getGoodAns(TICKET_NUMBER, QUESTION_NUMBER)){
+                    //SnackBar
+                    Snackbar snack = Snackbar.make(((FrameLayout)findViewById(R.id.parentFrame)), getResources().getString(R.string.snack_good), Snackbar.LENGTH_SHORT);
+                    View v = snack.getView();
 
-            if(i + 1 == ahelp.getGoodAns(TICKET_NUMBER, QUESTION_NUMBER)){
-                //SnackBar
-                Snackbar snack = Snackbar.make(((FrameLayout)findViewById(R.id.parentFrame)), getResources().getString(R.string.snack_good), Snackbar.LENGTH_SHORT);
-                View v = snack.getView();
-
-                TextView text = (TextView)v.findViewById(android.support.design.R.id.snackbar_text);
-                text.setTextColor(getResources().getColor(R.color.colorGood));
-                snack.show();
-                NextConfig(CODE_GOOD);
-
-
-            } else {
-                //SnackBar
-                Snackbar snack = Snackbar.make(((FrameLayout)findViewById(R.id.parentFrame)), getResources().getString(R.string.snack_bad), Snackbar.LENGTH_SHORT);
-                View v = snack.getView();
-                TextView text = (TextView)v.findViewById(android.support.design.R.id.snackbar_text);
-                text.setTextColor(getResources().getColor(R.color.colorBad));
-                snack.show();
+                    TextView text = (TextView)v.findViewById(android.support.design.R.id.snackbar_text);
+                    text.setTextColor(getResources().getColor(R.color.colorGood));
+                    snack.show();
+                    NextConfig(CODE_GOOD);
 
 
-                NextConfig(CODE_BAD);
+                } else {
+                    //SnackBar
+                    Snackbar snack = Snackbar.make(((FrameLayout)findViewById(R.id.parentFrame)), getResources().getString(R.string.snack_bad), Snackbar.LENGTH_SHORT);
+                    View v = snack.getView();
+                    TextView text = (TextView)v.findViewById(android.support.design.R.id.snackbar_text);
+                    text.setTextColor(getResources().getColor(R.color.colorBad));
+                    snack.show();
 
+
+                    NextConfig(CODE_BAD);
+
+            }
             }
         }
     };
@@ -256,10 +265,7 @@ public class ExamActivity extends AppCompatActivity {
 
     private void NextConfig(int CODE){
 
-        if(SKIP_Q_MODE){
-
-
-        }
+        listAnswers.removeHeaderView(vHeader);
         if(CODE == CODE_GOOD){
 
             SetQuestionButtonColor(QUESTION_COUNT, getResources().getColor(R.color.colorGood));
@@ -403,7 +409,12 @@ public class ExamActivity extends AppCompatActivity {
     }
 
     private int GetButtonX(int btn){
-        return (int)((Button)findViewById(QUESTIONS_BTNS[btn - 1])).getX() - 500;
+        if(Build.VERSION.SDK_INT >= 11){
+            return (int)((Button)findViewById(QUESTIONS_BTNS[btn - 1])).getX() - 500;
+        } else {
+            return ((Button)findViewById(QUESTIONS_BTNS[btn - 1])).getLeft() - 500;
+        }
+
     }
     private void SetQuestionButtonColor(int btn, int color){
         ((Button)findViewById(QUESTIONS_BTNS[btn - 1])).setBackgroundColor(color);
