@@ -45,6 +45,7 @@ public class ExamActivity extends AppCompatActivity {
     ListView listAnswers;
     RelativeLayout ImgLay;
 
+    private ArrayList<ErrorsQuestions> listErrors;
 
     private ArrayList<String> arrayAns;
     private int good_answers_count = 0;
@@ -75,7 +76,7 @@ public class ExamActivity extends AppCompatActivity {
         setContentView(R.layout.activity_exam);
         TICKET_NUMBER = Helper.getInstance().getTICKET_NUMBER();
         assetHelper = new AssetHelper(this, "ru");
-
+        listErrors = new ArrayList<>();
         hScroll = (HorizontalScrollView)findViewById(R.id.hScroll);
         Intent intent = getIntent();
         MODE_MIX = intent.getBooleanExtra("mode", false);
@@ -159,7 +160,8 @@ public class ExamActivity extends AppCompatActivity {
         tvQuestion.setText(assetHelper.getQuestion(_ticket, _question));
 
         arrayAns = assetHelper.getListAnswers(_ticket, _question);
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayAns);
+//        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayAns);
+        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.item_answer, R.id._textItem, arrayAns);
         listAnswers.setAdapter(adapter);
 
         listAnswers.addHeaderView(vHeader);
@@ -179,9 +181,9 @@ public class ExamActivity extends AppCompatActivity {
                 Log.d(TAG, "ID=" + i);
             }
 
-
+            int goodAns = assetHelper.getGoodAns(TICKET_NUMBER, QUESTION_NUMBER);
             if (i != 0) {
-                if(i == assetHelper.getGoodAns(TICKET_NUMBER, QUESTION_NUMBER)){ //проверка правильного ответа
+                if(i == goodAns){ //проверка правильного ответа
                     //SnackBar
                     Snackbar snack = Snackbar.make(((FrameLayout)findViewById(R.id.parentFrame)), getResources().getString(R.string.snack_good), Snackbar.LENGTH_SHORT);
                     View v = snack.getView();
@@ -200,6 +202,15 @@ public class ExamActivity extends AppCompatActivity {
                     text.setTextColor(getResources().getColor(R.color.colorBad));
                     snack.show();
 
+                    ErrorsQuestions er = new ErrorsQuestions();
+                    er.setIMG(assetHelper.getImg(TICKET_NUMBER, QUESTION_NUMBER));
+                    er.setQUESTION(assetHelper.getQuestion(TICKET_NUMBER, QUESTION_NUMBER));
+                    er.setGOOOD_ANSWER(assetHelper.getAnswer(TICKET_NUMBER, QUESTION_NUMBER, goodAns));
+                    er.setBAD_ANSWER(assetHelper.getAnswer(TICKET_NUMBER, QUESTION_NUMBER, i));
+                    er.setCOMMENT(assetHelper.getComment(TICKET_NUMBER, QUESTION_NUMBER));
+                    er.setNUM_QUESTION(QUESTION_COUNT);
+                    listErrors.add(er);
+                    Helper.getInstance().setListErrors(listErrors);
 
                     NextConfig(CODE_BAD); //переключение на следующий вопрос с сообщением о том что отет не верный
 

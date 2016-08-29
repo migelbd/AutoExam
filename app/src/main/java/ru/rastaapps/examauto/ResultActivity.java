@@ -2,10 +2,14 @@ package ru.rastaapps.examauto;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -24,13 +28,19 @@ public class ResultActivity extends AppCompatActivity {
         lnResult = (LinearLayout)findViewById(R.id.lnResult);
         lnErr = (LinearLayout)findViewById(R.id.lnErrLay);
 
+
         Intent i = getIntent();
         if(i.getBooleanExtra("result", false)){
             tvResult.setText("Вы сдали");
-            tvResult.setTextColor(Color.GREEN);
+            tvResult.setTextColor(getResources().getColor(R.color.colorGood));
+
+
+
         } else {
             tvResult.setText("Вы не сдали");
-            tvResult.setTextColor(Color.RED);
+            tvResult.setTextColor(getResources().getColor(R.color.colorBad));
+
+
         }
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         TextView good = new TextView(this);
@@ -59,5 +69,29 @@ public class ResultActivity extends AppCompatActivity {
         lnResult.addView(good);
         lnResult.addView(bad);
         lnResult.addView(skip);
+
+
+
+        FillItemsResult();
+    }
+
+
+    private void FillItemsResult(){
+
+
+        for(ErrorsQuestions e : Helper.getInstance().getListErrors()){
+            View item = getLayoutInflater().inflate(R.layout.item_error_result, null);
+            ImageView img = (ImageView)item.findViewById(R.id._img);
+            img.setMinimumWidth(getWindowManager().getDefaultDisplay().getWidth());
+            img.setMinimumHeight(600);
+            img.setImageDrawable(e.getIMG());
+
+            ((TextView)item.findViewById(R.id._tvNumQuestion)).setText("Вопрос " + e.getNUM_QUESTION());
+            ((TextView)item.findViewById(R.id._tvQuestion)).setText(e.getQUESTION());
+            ((TextView)item.findViewById(R.id._tvBad)).setText(e.getBAD_ANSWER());
+            ((TextView)item.findViewById(R.id._tvGood)).setText(e.getGOOOD_ANSWER());
+            ((TextView)item.findViewById(R.id._tvComment)).setText(e.getCOMMENT());
+            lnErr.addView(item);
+        }
     }
 }

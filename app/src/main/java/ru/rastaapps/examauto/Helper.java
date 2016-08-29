@@ -2,6 +2,8 @@ package ru.rastaapps.examauto;
 
 import android.app.Application;
 
+import java.util.ArrayList;
+
 /**
  * Created by MigeL on 28.08.2016.
  */
@@ -22,7 +24,7 @@ public class Helper extends Application {
     //Переменные
     private int TICKET_NUMBER;
     private boolean SECRET_CODE;
-
+    private ArrayList<ErrorsQuestions> listErrors;
 
     public int getTICKET_NUMBER() {
         return TICKET_NUMBER;
@@ -38,5 +40,13 @@ public class Helper extends Application {
 
     public void setSECRET_CODE(boolean SECRET_CODE) {
         this.SECRET_CODE = SECRET_CODE;
+    }
+
+    public ArrayList<ErrorsQuestions> getListErrors() {
+        return listErrors;
+    }
+
+    public void setListErrors(ArrayList<ErrorsQuestions> listErrors) {
+        this.listErrors = listErrors;
     }
 }

@@ -76,5 +76,7 @@
     <string name="snack_bad">Не правильно</string>
     <string name="txt_question">Вопрос</string>
     <string name="action_skip">Пропустить</string>
+    <string name="_result_text_bad">Ваш выбор:</string>
+    <string name="_result_txt_good">Правильный:</string>
 
 </resources>
