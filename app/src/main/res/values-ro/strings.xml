@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RCR Moldova</string>
+    <string name="info_disp">Imitarea în cauză are menirea doar de a verifica și îmbunătăți cunoștințele obținute în cadrul cursurilor de pregătire a conducătorilor de autovehicule sau în cazul studiului individual.</string>
+    <string name="page_title_exam">Examen</string>
+    <string name="page_title_pdd">RCR</string>
+    <string name="snack_bad">Greșit</string>
+    <string name="snack_good">Corect</string>
+    <string name="text_spin">Selectați bilet</string>
+    <string name="txt_bad">Erori:</string>
+    <string name="txt_good">Corect:</string>
+    <string name="txt_question">Întrebare</string>
+    <string name="txt_skip">Omit:</string>
+    <string name="btn_start">Începe</string>
+    <string name="btn_mix_start">Amesteca</string>
+    <string name="btn_confirm">Confirma</string>
+    <string name="action_skip">Sări</string>
+    <string name="action_settings">Setările</string>
+    <string name="_result_txt_good">Corecta:</string>
+    <string name="_result_text_bad">Selecția dvs:</string>
+    <string name="txt_res_err">Erori:</string>
+    <string name="txt_res_good">A răspuns:</string>
+    <string name="txt_res_no_ans">Fără răspuns:</string>
+    <string name="txt_res_winner">Ați finalizat cu succes examenul</string>
+    <string name="txt_res_looser">Ai picat examenul</string>
+
+    <string-array name="spinner_titles_ticket">
+        <item>Bilet 1</item>
+        <item>Bilet 2</item>
+        <item>Bilet 3</item>
+        <item>Bilet 4</item>
+        <item>Bilet 5</item>
+        <item>Bilet 6</item>
+        <item>Bilet 7</item>
+        <item>Bilet 8</item>
+        <item>Bilet 9</item>
+        <item>Bilet 10</item>
+        <item>Bilet 11</item>
+        <item>Bilet 12</item>
+        <item>Bilet 13</item>
+        <item>Bilet 14</item>
+        <item>Bilet 15</item>
+        <item>Bilet 16</item>
+        <item>Bilet 17</item>
+        <item>Bilet 18</item>
+        <item>Bilet 19</item>
+        <item>Bilet 20</item>
+        <item>Bilet 21</item>
+        <item>Bilet 22</item>
+        <item>Bilet 23</item>
+        <item>Bilet 24</item>
+        <item>Bilet 25</item>
+        <item>Bilet 26</item>
+        <item>Bilet 27</item>
+        <item>Bilet 28</item>
+        <item>Bilet 29</item>
+        <item>Bilet 30</item>
+        <item>Bilet 31</item>
+        <item>Bilet 32</item>
+        <item>Bilet 33</item>
+        <item>Bilet 34</item>
+        <item>Bilet 35</item>
+
+    </string-array>
+</resources>

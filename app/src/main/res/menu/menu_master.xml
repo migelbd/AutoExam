@@ -7,4 +7,12 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_lang"
+        android:orderInCategory="100"
+        android:title="Язык"
+        app:showAsAction="always"
+        android:icon="@mipmap/ic_action_lang_ru"
+        />
 </menu>

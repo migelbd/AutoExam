@@ -1,6 +1,9 @@
 package ru.rastaapps.examauto;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.os.Build;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -24,18 +27,25 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 public class MasterActivity extends AppCompatActivity {
 
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
-
-
+    private int LANG_CODE;
+    private int LANG_RU = 100;
+    private int LANG_RO = 200;
+    private SharedPreferences sPref;
     private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_master);
+        sPref = getPreferences(MODE_PRIVATE);
+        LANG_CODE = sPref.getInt("langcode", LANG_RU);
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -57,10 +67,33 @@ public class MasterActivity extends AppCompatActivity {
     }
 
 
+    private void setLang(int l_code){
+        Locale l = null;
+        if(l_code == LANG_RU) l = new Locale("ru");
+        else if(l_code == LANG_RO) l = new Locale("ro");
+
+        Locale.setDefault(l);
+        Configuration config = new Configuration();
+        if(Build.VERSION.SDK_INT >= 17){
+            config.setLocale(l);
+        } else {
+            config.locale = l;
+        }
+        getBaseContext().getResources().updateConfiguration(config, null);
+        Intent i = getBaseContext().getPackageManager()
+                .getLaunchIntentForPackage( getBaseContext().getPackageName() );
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
+
+
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_master, menu);
+        if(LANG_CODE == LANG_RO) menu.findItem(R.id.action_lang).setIcon(R.mipmap.ic_action_lang_ro);
+        else if(LANG_CODE == LANG_RU) menu.findItem(R.id.action_lang).setIcon(R.mipmap.ic_action_lang_ru);
         return true;
     }
 
@@ -73,6 +106,25 @@ public class MasterActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        }
+        if(id == R.id.action_lang){
+            if(LANG_CODE == LANG_RU){
+                sPref = getPreferences(MODE_PRIVATE);
+                SharedPreferences.Editor ed = sPref.edit();
+                ed.putInt("langcode", LANG_RO);
+                ed.commit();
+                item.setIcon(R.mipmap.ic_action_lang_ro);
+                setLang(LANG_RO);
+            } else if(LANG_CODE == LANG_RO){
+                sPref = getPreferences(MODE_PRIVATE);
+                SharedPreferences.Editor ed = sPref.edit();
+                ed.putInt("langcode", LANG_RU);
+                ed.commit();
+                item.setIcon(R.mipmap.ic_action_lang_ru);
+                setLang(LANG_RU);
+            }
+
             return true;
         }
 

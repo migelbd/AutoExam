@@ -104,8 +104,7 @@ public class ExamActivity extends AppCompatActivity {
             TICKET_NUMBER = TICKETS[QUESTION_COUNT - 1];
             QUESTION_NUMBER = QUESTIONS[QUESTION_COUNT - 1];
         }
-        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getApplicationContext(), R.array.spinner_titles_quest, R.layout.spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
 
 
 

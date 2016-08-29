@@ -31,13 +31,13 @@ public class ResultActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         if(i.getBooleanExtra("result", false)){
-            tvResult.setText("Вы сдали");
+            tvResult.setText(getResources().getString(R.string.txt_res_winner));
             tvResult.setTextColor(getResources().getColor(R.color.colorGood));
 
 
 
         } else {
-            tvResult.setText("Вы не сдали");
+            tvResult.setText(getResources().getString(R.string.txt_res_looser));
             tvResult.setTextColor(getResources().getColor(R.color.colorBad));
 
 
@@ -47,9 +47,9 @@ public class ResultActivity extends AppCompatActivity {
         TextView bad = new TextView(this);
         TextView skip = new TextView(this);
 
-        good.setText("Отвеченых: " + i.getIntExtra("good", 0));
-        bad.setText("Ошибок: " + i.getIntExtra("bad", 0));
-        skip.setText("Не отвеченых: " + i.getIntExtra("skip", 0));
+        good.setText(getResources().getString(R.string.txt_res_good) + " " + i.getIntExtra("good", 0));
+        bad.setText(getResources().getString(R.string.txt_res_err) + " " + i.getIntExtra("bad", 0));
+        skip.setText(getResources().getString(R.string.txt_res_no_ans) + " " + i.getIntExtra("skip", 0));
 
         good.setLayoutParams(params);
         bad.setLayoutParams(params);
@@ -88,7 +88,7 @@ public class ResultActivity extends AppCompatActivity {
                 img.setImageDrawable(e.getIMG());
             }
 
-            ((TextView)item.findViewById(R.id._tvNumQuestion)).setText("Вопрос " + e.getNUM_QUESTION());
+            ((TextView)item.findViewById(R.id._tvNumQuestion)).setText(getResources().getString(R.string.txt_question) + " " + e.getNUM_QUESTION());
             ((TextView)item.findViewById(R.id._tvQuestion)).setText(e.getQUESTION());
             ((TextView)item.findViewById(R.id._tvBad)).setText(e.getBAD_ANSWER());
             ((TextView)item.findViewById(R.id._tvGood)).setText(e.getGOOOD_ANSWER());
