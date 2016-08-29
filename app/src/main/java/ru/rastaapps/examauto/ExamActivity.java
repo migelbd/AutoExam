@@ -1,6 +1,5 @@
 package ru.rastaapps.examauto;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -11,11 +10,15 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -31,7 +34,8 @@ public class ExamActivity extends AppCompatActivity {
     private static final int CODE_GOOD = 100;
     private static final int CODE_BAD = 200;
     private static final int CODE_SKIP = 300;
-    private static final int CODE_SPIN_SELECTED = 400;
+    private static final int CODE_BTN_SELECTED = 400;
+    private boolean SKIP_Q_MODE = false;
     private final String TAG = "ExamActivity";
     CountDownTimer cdt;
     private long time = 1800000;
@@ -40,7 +44,7 @@ public class ExamActivity extends AppCompatActivity {
 
     ListView listAnswers;
     RelativeLayout ImgLay;
-    Spinner spinner;
+
 //    LinearLayout BtnsLay, BtnsLay_2;
     private ArrayList<String> arrayAns;
     private int good_answers_count = 0;
@@ -52,8 +56,17 @@ public class ExamActivity extends AppCompatActivity {
     private int QUESTION_NUMBER = 1;
     private int TICKET_NUMBER = 1;
 
+    private int _SKIPING_Q_COUNT = 0;
+
     private int[] TICKETS;
     private int[] QUESTIONS;
+
+    private HorizontalScrollView hScroll;
+    private ArrayList<Integer> skiping_questions;
+
+    //Кнопки вопросов
+    int[] QUESTIONS_BTNS = {R.id.v1, R.id.v2, R.id.v3, R.id.v4, R.id.v5, R.id.v6, R.id.v7, R.id.v8, R.id.v9, R.id.v10,
+            R.id.v11, R.id.v12, R.id.v13, R.id.v14, R.id.v15, R.id.v16, R.id.v17, R.id.v18, R.id.v19, R.id.v20};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,16 +75,16 @@ public class ExamActivity extends AppCompatActivity {
         TICKET_NUMBER = Helper.getInstance().getTICKET_NUMBER();
         ahelp = new AssetHelper(this, "ru");
         tvQuestion = (TextView)findViewById(R.id.tvQuestion);
-       spinner = (Spinner)findViewById(R.id.spin_questions);
+        hScroll = (HorizontalScrollView)findViewById(R.id.hScroll);
         Intent intent = getIntent();
         MODE_MIX = intent.getBooleanExtra("mode", false);
         if(MODE_MIX == true){
-            TICKETS = new int[19];
-            QUESTIONS = new int[19];
-            for(int i = 0;i<19;i++){
+            TICKETS = new int[20];
+            QUESTIONS = new int[20];
+            for(int i = 0;i<20;i++){
                 TICKETS[i] = ahelp.getTicketRandom();
             }
-            for(int a = 0;a<19;a++){
+            for(int a = 0;a<20;a++){
                 QUESTIONS[a] = ahelp.getQuestRandom();
             }
 
@@ -81,21 +94,7 @@ public class ExamActivity extends AppCompatActivity {
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getApplicationContext(), R.array.spinner_titles_quest, R.layout.spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                QUESTION_COUNT = i + 1;
 
-                NextConfig(CODE_SPIN_SELECTED);
-                Log.i(TAG, "Selected question" + (i + 1));
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
 
         listAnswers = (ListView)findViewById(R.id.lvAnswers);
 
@@ -107,7 +106,13 @@ public class ExamActivity extends AppCompatActivity {
             public void onTick(long l) {
                 SimpleDateFormat sd = new SimpleDateFormat("mm:ss");
                 ActionBar b = getSupportActionBar();
-                b.setTitle(sd.format(l));
+
+
+                if(BuildConfig.DEBUG || Helper.getInstance().isSECRET_CODE()){
+                    b.setTitle(sd.format(l) + " OK:" + ahelp.getGoodAns(TICKET_NUMBER, QUESTION_NUMBER) + " T:" + TICKET_NUMBER);
+                } else {
+                    b.setTitle(sd.format(l));
+                }
             }
 
             @Override
@@ -116,13 +121,24 @@ public class ExamActivity extends AppCompatActivity {
             }
         };
         cdt.start();
+        skiping_questions = new ArrayList<>();
+        //
+        for(int i = 0;i<QUESTIONS_BTNS.length;i++){
+            ((Button)findViewById(QUESTIONS_BTNS[i])).setOnClickListener(bt_listener);
+            ((Button)findViewById(QUESTIONS_BTNS[i])).setBackgroundColor(getResources().getColor(R.color.colorBtnQuestion));
+        }
+
+
         getQuestionToLayout(TICKET_NUMBER, QUESTION_NUMBER);
     }
 
     private void getQuestionToLayout(int _ticket, int _question){
 
 
-        spinner.setSelection(QUESTION_COUNT - 1);
+
+
+
+
         Log.i(TAG, "Getting question");
         ImageView img = new ImageView(this);
         Drawable d = ahelp.getImg(_ticket, _question);
@@ -153,25 +169,26 @@ public class ExamActivity extends AppCompatActivity {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
             if(BuildConfig.DEBUG){
-                Toast.makeText(getApplicationContext(), "ID=" + i + " P=" + l, Toast.LENGTH_SHORT).show(); //debug
-                Log.d(TAG, "ID=" + i + " P=" + l);
+                //Toast.makeText(getApplicationContext(), "ID=" + i + " P=" + l, Toast.LENGTH_SHORT).show(); //debug
+                Log.d(TAG, "ID=" + i);
             }
 
 
 
             if(i + 1 == ahelp.getGoodAns(TICKET_NUMBER, QUESTION_NUMBER)){
                 //SnackBar
-                Snackbar snack = Snackbar.make(listAnswers, getResources().getString(R.string.snack_good), Snackbar.LENGTH_SHORT);
+                Snackbar snack = Snackbar.make(((FrameLayout)findViewById(R.id.parentFrame)), getResources().getString(R.string.snack_good), Snackbar.LENGTH_SHORT);
                 View v = snack.getView();
+
                 TextView text = (TextView)v.findViewById(android.support.design.R.id.snackbar_text);
                 text.setTextColor(getResources().getColor(R.color.colorGood));
                 snack.show();
-
                 NextConfig(CODE_GOOD);
+
 
             } else {
                 //SnackBar
-                Snackbar snack = Snackbar.make(listAnswers, getResources().getString(R.string.snack_bad), Snackbar.LENGTH_SHORT);
+                Snackbar snack = Snackbar.make(((FrameLayout)findViewById(R.id.parentFrame)), getResources().getString(R.string.snack_bad), Snackbar.LENGTH_SHORT);
                 View v = snack.getView();
                 TextView text = (TextView)v.findViewById(android.support.design.R.id.snackbar_text);
                 text.setTextColor(getResources().getColor(R.color.colorBad));
@@ -186,6 +203,41 @@ public class ExamActivity extends AppCompatActivity {
 
 
 
+
+    private View.OnClickListener bt_listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            for(int i = 0;i<19;i++){
+                SetQuestionButtonColor(i + 1, getResources().getColor(R.color.colorBtnQuestion));
+            }
+
+            switch (view.getId()){
+                default: break;
+                case R.id.v1: QUESTION_COUNT = 1; NextConfig(CODE_BTN_SELECTED); break;
+                case R.id.v2: QUESTION_COUNT = 2; NextConfig(CODE_BTN_SELECTED); break;
+                case R.id.v3: QUESTION_COUNT = 3; NextConfig(CODE_BTN_SELECTED); break;
+                case R.id.v4: QUESTION_COUNT = 4; NextConfig(CODE_BTN_SELECTED); break;
+                case R.id.v5: QUESTION_COUNT = 5; NextConfig(CODE_BTN_SELECTED); break;
+                case R.id.v6: QUESTION_COUNT = 6; NextConfig(CODE_BTN_SELECTED); break;
+                case R.id.v7: QUESTION_COUNT = 7; NextConfig(CODE_BTN_SELECTED); break;
+                case R.id.v8: QUESTION_COUNT = 8; NextConfig(CODE_BTN_SELECTED); break;
+                case R.id.v9: QUESTION_COUNT = 9; NextConfig(CODE_BTN_SELECTED); break;
+                case R.id.v10: QUESTION_COUNT = 10; NextConfig(CODE_BTN_SELECTED); break;
+                case R.id.v11: QUESTION_COUNT = 11; NextConfig(CODE_BTN_SELECTED); break;
+                case R.id.v12: QUESTION_COUNT = 12; NextConfig(CODE_BTN_SELECTED); break;
+                case R.id.v13: QUESTION_COUNT = 13; NextConfig(CODE_BTN_SELECTED); break;
+                case R.id.v14: QUESTION_COUNT = 14; NextConfig(CODE_BTN_SELECTED); break;
+                case R.id.v15: QUESTION_COUNT = 15; NextConfig(CODE_BTN_SELECTED); break;
+                case R.id.v16: QUESTION_COUNT = 16; NextConfig(CODE_BTN_SELECTED); break;
+                case R.id.v17: QUESTION_COUNT = 17; NextConfig(CODE_BTN_SELECTED); break;
+                case R.id.v18: QUESTION_COUNT = 18; NextConfig(CODE_BTN_SELECTED); break;
+                case R.id.v19: QUESTION_COUNT = 19; NextConfig(CODE_BTN_SELECTED); break;
+                case R.id.v20: QUESTION_COUNT = 20; NextConfig(CODE_BTN_SELECTED); break;
+
+            }
+
+        }
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -204,58 +256,126 @@ public class ExamActivity extends AppCompatActivity {
 
     private void NextConfig(int CODE){
 
+        if(SKIP_Q_MODE){
 
 
+        }
         if(CODE == CODE_GOOD){
-            good_answers_count += 1;
-            QUESTION_COUNT += 1;
-            if(MODE_MIX){
-                QUESTION_NUMBER = QUESTIONS[QUESTION_COUNT - 1];
-                TICKET_NUMBER = TICKETS[QUESTION_COUNT - 1];
 
+            SetQuestionButtonColor(QUESTION_COUNT, getResources().getColor(R.color.colorGood));
+            if(!SKIP_Q_MODE) {
+                QUESTION_COUNT += 1;
             } else {
-                QUESTION_NUMBER = QUESTION_COUNT;
+                _SKIPING_Q_COUNT += 1;
+                skip_answers_count -= 1;
+                if (_SKIPING_Q_COUNT < skiping_questions.size()) {
+                    QUESTION_COUNT = skiping_questions.get(_SKIPING_Q_COUNT);
+
+                } else {
+                    CheckResult();
+
+                }
+            }
+            good_answers_count += 1;
+
+            if (QUESTION_COUNT != 21) {
+                if(MODE_MIX){
+                    QUESTION_NUMBER = QUESTIONS[QUESTION_COUNT - 1];
+                    TICKET_NUMBER = TICKETS[QUESTION_COUNT - 1];
+
+                } else {
+                    QUESTION_NUMBER = QUESTION_COUNT;
+                }
+                getQuestionToLayout(TICKET_NUMBER, QUESTION_NUMBER);
+
+
             }
 
-        } else if(CODE == CODE_BAD){
-            bad_answers_count += 1;
-            QUESTION_COUNT += 1;
-            if(MODE_MIX){
-                QUESTION_NUMBER = QUESTIONS[QUESTION_COUNT - 1];
-                TICKET_NUMBER = TICKETS[QUESTION_COUNT - 1];
 
+        } else if(CODE == CODE_BAD){
+
+            SetQuestionButtonColor(QUESTION_COUNT, getResources().getColor(R.color.colorBad));
+            if(!SKIP_Q_MODE){
+                QUESTION_COUNT += 1;
             } else {
-                QUESTION_NUMBER = QUESTION_COUNT;
+                _SKIPING_Q_COUNT += 1;
+                skip_answers_count -= 1;
+                if (_SKIPING_Q_COUNT < skiping_questions.size()) {
+                    QUESTION_COUNT = skiping_questions.get(_SKIPING_Q_COUNT);
+
+                } else {
+                    CheckResult();
+
+                }
+            }
+            bad_answers_count += 1;
+
+            if (QUESTION_COUNT != 21) {
+                if(MODE_MIX){
+                    QUESTION_NUMBER = QUESTIONS[QUESTION_COUNT - 1];
+                    TICKET_NUMBER = TICKETS[QUESTION_COUNT - 1];
+
+                } else {
+                    QUESTION_NUMBER = QUESTION_COUNT;
+                }
+                getQuestionToLayout(TICKET_NUMBER, QUESTION_NUMBER);
+
             }
 
         } else if(CODE == CODE_SKIP){
+            SetQuestionButtonColor(QUESTION_COUNT, getResources().getColor(R.color.colorSkip));
+            SetSkipQuestions(QUESTION_COUNT);
             skip_answers_count += 1;
             QUESTION_COUNT += 1;
-            if(MODE_MIX){
-                QUESTION_NUMBER = QUESTIONS[QUESTION_COUNT - 1];
-                TICKET_NUMBER = TICKETS[QUESTION_COUNT - 1];
+            if (QUESTION_COUNT != 21) {
+                if(MODE_MIX){
+                    QUESTION_NUMBER = QUESTIONS[QUESTION_COUNT - 1];
+                    TICKET_NUMBER = TICKETS[QUESTION_COUNT - 1];
 
-            } else {
-                QUESTION_NUMBER = QUESTION_COUNT;
+                } else {
+                    QUESTION_NUMBER = QUESTION_COUNT;
+                }
+                getQuestionToLayout(TICKET_NUMBER, QUESTION_NUMBER);
             }
 
-        } else if(CODE == CODE_SPIN_SELECTED){
-            if(MODE_MIX){
-                QUESTION_NUMBER = QUESTIONS[QUESTION_COUNT - 1];
-                TICKET_NUMBER = TICKETS[QUESTION_COUNT - 1];
+        } else if(CODE == CODE_BTN_SELECTED){
 
-            } else {
-                QUESTION_NUMBER = QUESTION_COUNT;
+            if (QUESTION_COUNT != 21) {
+                if(MODE_MIX){
+                    QUESTION_NUMBER = QUESTIONS[QUESTION_COUNT - 1];
+                    TICKET_NUMBER = TICKETS[QUESTION_COUNT - 1];
+
+                } else {
+                    QUESTION_NUMBER = QUESTION_COUNT;
+                }
+                getQuestionToLayout(TICKET_NUMBER, QUESTION_NUMBER);
             }
+
         } else {
             Log.e(TAG, "Error CODE");
         }
+        if (QUESTION_COUNT != 21) {
+            SetQuestionButtonColor(QUESTION_COUNT, getResources().getColor(R.color.colorBtnSelected));
+        }
+
+        if(QUESTION_COUNT < 20) hScroll.smoothScrollTo(GetButtonX(QUESTION_COUNT), 0);
+        CheckResult();
 
 
 
-        if(QUESTION_COUNT > 20){
+
+
+
+
+    }
+
+    private void CheckResult(){
+        if(QUESTION_COUNT > 20 && skip_answers_count > 3){
             ShowDialog("Упс..", "Вы еще не ответили на некоторые вопросы.");
-        } else if(good_answers_count >= 17){
+            SKIP_Q_MODE = true;
+            QUESTION_COUNT = skiping_questions.get(_SKIPING_Q_COUNT);
+            NextConfig(CODE_BTN_SELECTED);
+        } else if(good_answers_count >= 17 && QUESTION_COUNT > 20){
             Intent i = new Intent(this, ResultActivity.class);
             i.putExtra("result", true);
             i.putExtra("good", good_answers_count);
@@ -271,12 +391,27 @@ public class ExamActivity extends AppCompatActivity {
             i.putExtra("skip", skip_answers_count);
             startActivity(i);
             finish();
-        } else {
-            getQuestionToLayout(TICKET_NUMBER, QUESTION_NUMBER);
+        } else if(good_answers_count >= 17 && skip_answers_count < 3){
+            Intent i = new Intent(this, ResultActivity.class);
+            i.putExtra("result", true);
+            i.putExtra("good", good_answers_count);
+            i.putExtra("bad", bad_answers_count);
+            i.putExtra("skip", skip_answers_count);
+            startActivity(i);
+            finish();
         }
-
     }
 
+    private int GetButtonX(int btn){
+        return (int)((Button)findViewById(QUESTIONS_BTNS[btn - 1])).getX() - 500;
+    }
+    private void SetQuestionButtonColor(int btn, int color){
+        ((Button)findViewById(QUESTIONS_BTNS[btn - 1])).setBackgroundColor(color);
+    }
+
+    private void SetSkipQuestions(int _question_count){
+        skiping_questions.add(_question_count);
+    }
     private void ShowDialog(String titile, String msg){
         AlertDialog.Builder adb = new AlertDialog.Builder(this);
         adb.setTitle(titile);
