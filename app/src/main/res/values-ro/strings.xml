@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">RCR Moldova</string>
+    <string name="app_name">Examen Simulator RCR</string>
     <string name="info_disp">Imitarea în cauză are menirea doar de a verifica și îmbunătăți cunoștințele obținute în cadrul cursurilor de pregătire a conducătorilor de autovehicule sau în cazul studiului individual.</string>
     <string name="page_title_exam">Examen</string>
     <string name="page_title_pdd">RCR</string>

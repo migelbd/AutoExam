@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ПДД Молдова</string>
+    <string name="app_name">Симулятор экзамена ПДД</string>
     <string name="action_settings">Настройки</string>
 
     <string name="page_title_pdd">ПДД</string>
