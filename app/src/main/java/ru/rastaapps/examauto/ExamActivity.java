@@ -1,19 +1,16 @@
 package ru.rastaapps.examauto;
 
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.CountDownTimer;
-import android.support.annotation.Dimension;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Display;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,9 +22,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -38,58 +33,61 @@ public class ExamActivity extends AppCompatActivity {
     private static final int CODE_BAD = 200;
     private static final int CODE_SKIP = 300;
     private static final int CODE_BTN_SELECTED = 400;
+    //ИД действия при смене вопроса
+
     private boolean SKIP_Q_MODE = false;
-    private final String TAG = "ExamActivity";
+    private final String TAG = "ExamActivity"; //Тэг для лога
     CountDownTimer cdt;
-    private long time = 1800000;
-    AssetHelper ahelp;
-    TextView tvQuestion, txtGood, txtSkip, txtBad;
+    private long time = 1800000; //Тайме экзамена 30 минут
+    AssetHelper assetHelper; //Класс доступа к asset файлам
+    TextView tvQuestion;
 
     ListView listAnswers;
     RelativeLayout ImgLay;
 
-//    LinearLayout BtnsLay, BtnsLay_2;
+
     private ArrayList<String> arrayAns;
     private int good_answers_count = 0;
     private int skip_answers_count = 0;
-    private int bad_answers_count = 0;
+    private int bad_answers_count = 0; //счетчики правильных, не правильных и пропущеных вопросов
 
     private boolean MODE_MIX = false;
-    private int QUESTION_COUNT = 1;
-    private int QUESTION_NUMBER = 1;
-    private int TICKET_NUMBER = 1;
+    private int QUESTION_COUNT = 1; //текущий вопрос
+    private int QUESTION_NUMBER = 1; //номер вопроса в билете
+    private int TICKET_NUMBER = 1; //номер билета
 
-    private int _SKIPING_Q_COUNT = 0;
+    private int _SKIPING_Q_COUNT = 0; //счетчик при ответах на пропущеные вопросы
 
-    private int[] TICKETS;
-    private int[] QUESTIONS;
+    private int[] TICKETS; //масив номеров билетов для режима Микс
+    private int[] QUESTIONS; //масив номеров вопросов
 
     View vHeader;
     private HorizontalScrollView hScroll;
-    private ArrayList<Integer> skiping_questions;
+    private ArrayList<Integer> skiping_questions; //масив пропущенных вопросов
 
     //Кнопки вопросов
     int[] QUESTIONS_BTNS = {R.id.v1, R.id.v2, R.id.v3, R.id.v4, R.id.v5, R.id.v6, R.id.v7, R.id.v8, R.id.v9, R.id.v10,
-            R.id.v11, R.id.v12, R.id.v13, R.id.v14, R.id.v15, R.id.v16, R.id.v17, R.id.v18, R.id.v19, R.id.v20};
+            R.id.v11, R.id.v12, R.id.v13, R.id.v14, R.id.v15, R.id.v16, R.id.v17, R.id.v18, R.id.v19, R.id.v20}; //масив ИД кнопок для индикации и переключения вопросов
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam);
         TICKET_NUMBER = Helper.getInstance().getTICKET_NUMBER();
-        ahelp = new AssetHelper(this, "ru");
+        assetHelper = new AssetHelper(this, "ru");
 
         hScroll = (HorizontalScrollView)findViewById(R.id.hScroll);
         Intent intent = getIntent();
         MODE_MIX = intent.getBooleanExtra("mode", false);
         if(MODE_MIX == true){
+            //наполнение масивов номерами билетов и вопросов в режиме Микс
             TICKETS = new int[20];
             QUESTIONS = new int[20];
             for(int i = 0;i<20;i++){
-                TICKETS[i] = ahelp.getTicketRandom();
+                TICKETS[i] = assetHelper.getTicketRandom();
             }
             for(int a = 0;a<20;a++){
-                QUESTIONS[a] = ahelp.getQuestRandom();
+                QUESTIONS[a] = assetHelper.getQuestRandom();
             }
 
             TICKET_NUMBER = TICKETS[QUESTION_COUNT - 1];
@@ -113,7 +111,7 @@ public class ExamActivity extends AppCompatActivity {
 
 
                 if(BuildConfig.DEBUG || Helper.getInstance().isSECRET_CODE()){
-                    b.setTitle(sd.format(l) + " OK:" + ahelp.getGoodAns(TICKET_NUMBER, QUESTION_NUMBER) + " T:" + TICKET_NUMBER);
+                    b.setTitle(sd.format(l) + " OK:" + assetHelper.getGoodAns(TICKET_NUMBER, QUESTION_NUMBER) + " T:" + TICKET_NUMBER);
                 } else {
                     b.setTitle(sd.format(l));
                 }
@@ -121,13 +119,13 @@ public class ExamActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                ShowDialog("Упс..", "Закончилось время");
+                ShowDialog("Упс..", "Закончилось время", getApplicationContext());
             }
         };
         cdt.start();
         skiping_questions = new ArrayList<>();
         //
-        for(int i = 0;i<QUESTIONS_BTNS.length;i++){
+        for(int i = 0;i<QUESTIONS_BTNS.length;i++){  //задает слушателя действия для кнопок
             ((Button)findViewById(QUESTIONS_BTNS[i])).setOnClickListener(bt_listener);
             ((Button)findViewById(QUESTIONS_BTNS[i])).setBackgroundColor(getResources().getColor(R.color.colorBtnQuestion));
         }
@@ -136,7 +134,7 @@ public class ExamActivity extends AppCompatActivity {
         getQuestionToLayout(TICKET_NUMBER, QUESTION_NUMBER);
     }
 
-    private void getQuestionToLayout(int _ticket, int _question){
+    private void getQuestionToLayout(int _ticket, int _question){ //поулчение вопроса
 
 
         vHeader = getLayoutInflater().inflate(R.layout.lv_header, null);
@@ -145,7 +143,7 @@ public class ExamActivity extends AppCompatActivity {
 
         Log.i(TAG, "Getting question");
         ImageView img = new ImageView(this);
-        Drawable d = ahelp.getImg(_ticket, _question);
+        Drawable d = assetHelper.getImg(_ticket, _question);
         if(d != null){
             img.setImageDrawable(d);
             img.setMinimumWidth(getWindowManager().getDefaultDisplay().getWidth());
@@ -158,9 +156,9 @@ public class ExamActivity extends AppCompatActivity {
             ImgLay.removeAllViews();
         }
 
-        tvQuestion.setText(ahelp.getQuestion(_ticket, _question));
+        tvQuestion.setText(assetHelper.getQuestion(_ticket, _question));
 
-        arrayAns = ahelp.getListAnswers(_ticket, _question);
+        arrayAns = assetHelper.getListAnswers(_ticket, _question);
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayAns);
         listAnswers.setAdapter(adapter);
 
@@ -177,13 +175,13 @@ public class ExamActivity extends AppCompatActivity {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
             if(BuildConfig.DEBUG){
-                //Toast.makeText(getApplicationContext(), "ID=" + i + " P=" + l, Toast.LENGTH_SHORT).show(); //debug
+
                 Log.d(TAG, "ID=" + i);
             }
 
 
             if (i != 0) {
-                if(i == ahelp.getGoodAns(TICKET_NUMBER, QUESTION_NUMBER)){
+                if(i == assetHelper.getGoodAns(TICKET_NUMBER, QUESTION_NUMBER)){ //проверка правильного ответа
                     //SnackBar
                     Snackbar snack = Snackbar.make(((FrameLayout)findViewById(R.id.parentFrame)), getResources().getString(R.string.snack_good), Snackbar.LENGTH_SHORT);
                     View v = snack.getView();
@@ -191,7 +189,7 @@ public class ExamActivity extends AppCompatActivity {
                     TextView text = (TextView)v.findViewById(android.support.design.R.id.snackbar_text);
                     text.setTextColor(getResources().getColor(R.color.colorGood));
                     snack.show();
-                    NextConfig(CODE_GOOD);
+                    NextConfig(CODE_GOOD); //переключение на следующий вопрос с сообщением о том что отет верный
 
 
                 } else {
@@ -203,7 +201,7 @@ public class ExamActivity extends AppCompatActivity {
                     snack.show();
 
 
-                    NextConfig(CODE_BAD);
+                    NextConfig(CODE_BAD); //переключение на следующий вопрос с сообщением о том что отет не верный
 
             }
             }
@@ -222,7 +220,7 @@ public class ExamActivity extends AppCompatActivity {
 
             switch (view.getId()){
                 default: break;
-                case R.id.v1: QUESTION_COUNT = 1; NextConfig(CODE_BTN_SELECTED); break;
+                case R.id.v1: QUESTION_COUNT = 1; NextConfig(CODE_BTN_SELECTED); break; //переключение на выбранные вопрос с помощью кнопок
                 case R.id.v2: QUESTION_COUNT = 2; NextConfig(CODE_BTN_SELECTED); break;
                 case R.id.v3: QUESTION_COUNT = 3; NextConfig(CODE_BTN_SELECTED); break;
                 case R.id.v4: QUESTION_COUNT = 4; NextConfig(CODE_BTN_SELECTED); break;
@@ -265,17 +263,17 @@ public class ExamActivity extends AppCompatActivity {
 
     private void NextConfig(int CODE){
 
-        listAnswers.removeHeaderView(vHeader);
+        listAnswers.removeHeaderView(vHeader); //очищает экран для следующего вопроса
         if(CODE == CODE_GOOD){
-
-            SetQuestionButtonColor(QUESTION_COUNT, getResources().getColor(R.color.colorGood));
-            if(!SKIP_Q_MODE) {
+            //верный ответ
+            SetQuestionButtonColor(QUESTION_COUNT, getResources().getColor(R.color.colorGood)); //для кнопки задается цвет
+            if(!SKIP_Q_MODE) { //проверка если в режиме отвтеа на пропущенные вопросы
                 QUESTION_COUNT += 1;
             } else {
                 _SKIPING_Q_COUNT += 1;
                 skip_answers_count -= 1;
                 if (_SKIPING_Q_COUNT < skiping_questions.size()) {
-                    QUESTION_COUNT = skiping_questions.get(_SKIPING_Q_COUNT);
+                    QUESTION_COUNT = skiping_questions.get(_SKIPING_Q_COUNT); //переключение на пропущенные вопросы
 
                 } else {
                     CheckResult();
@@ -330,7 +328,7 @@ public class ExamActivity extends AppCompatActivity {
 
         } else if(CODE == CODE_SKIP){
             SetQuestionButtonColor(QUESTION_COUNT, getResources().getColor(R.color.colorSkip));
-            SetSkipQuestions(QUESTION_COUNT);
+            SetSkipQuestions(QUESTION_COUNT); //запись в масив номера пропущенного вопроса
             skip_answers_count += 1;
             QUESTION_COUNT += 1;
             if (QUESTION_COUNT != 21) {
@@ -365,7 +363,8 @@ public class ExamActivity extends AppCompatActivity {
         }
 
         if(QUESTION_COUNT < 20) hScroll.smoothScrollTo(GetButtonX(QUESTION_COUNT), 0);
-        CheckResult();
+
+        CheckResult(); // проверка результатов
 
 
 
@@ -376,12 +375,12 @@ public class ExamActivity extends AppCompatActivity {
     }
 
     private void CheckResult(){
-        if(QUESTION_COUNT > 20 && skip_answers_count > 3){
-            ShowDialog("Упс..", "Вы еще не ответили на некоторые вопросы.");
+        if(QUESTION_COUNT > 20 && skip_answers_count > 3){ //если номера вопроса 20, а пропущенных вопросов больше 3, то происходит переключение в режим ответа пропущенных вопросов
+            ShowDialog("Упс..", "Вы еще не ответили на некоторые вопросы.", getApplicationContext());
             SKIP_Q_MODE = true;
             QUESTION_COUNT = skiping_questions.get(_SKIPING_Q_COUNT);
             NextConfig(CODE_BTN_SELECTED);
-        } else if(good_answers_count >= 17 && QUESTION_COUNT > 20){
+        } else if(good_answers_count >= 17 && QUESTION_COUNT > 20){ // если ответов верных больше 17 и вопрос 20 то открывается экран с резульататами
             Intent i = new Intent(this, ResultActivity.class);
             i.putExtra("result", true);
             i.putExtra("good", good_answers_count);
@@ -389,7 +388,7 @@ public class ExamActivity extends AppCompatActivity {
             i.putExtra("skip", skip_answers_count);
             startActivity(i);
             finish();
-        } else if(bad_answers_count > 3){
+        } else if(bad_answers_count > 3){ //если больше 3 ошибок, открывается экран с результатами
             Intent i = new Intent(this, ResultActivity.class);
             i.putExtra("result", false);
             i.putExtra("good", good_answers_count);
@@ -408,11 +407,11 @@ public class ExamActivity extends AppCompatActivity {
         }
     }
 
-    private int GetButtonX(int btn){
+    private int GetButtonX(int btn){ //получение координат кнопки для автоматической прокрутки полосы с кнопками
         if(Build.VERSION.SDK_INT >= 11){
-            return (int)((Button)findViewById(QUESTIONS_BTNS[btn - 1])).getX() - 500;
+            return (int)((Button)findViewById(QUESTIONS_BTNS[btn - 1])).getX() - 500; //для версии SDK выше 11
         } else {
-            return ((Button)findViewById(QUESTIONS_BTNS[btn - 1])).getLeft() - 500;
+            return ((Button)findViewById(QUESTIONS_BTNS[btn - 1])).getLeft() - 500; 
         }
 
     }
@@ -423,8 +422,8 @@ public class ExamActivity extends AppCompatActivity {
     private void SetSkipQuestions(int _question_count){
         skiping_questions.add(_question_count);
     }
-    private void ShowDialog(String titile, String msg){
-        AlertDialog.Builder adb = new AlertDialog.Builder(this);
+    private void ShowDialog(String titile, String msg, Context applicationContext){
+        AlertDialog.Builder adb = new AlertDialog.Builder(applicationContext);
         adb.setTitle(titile);
         adb.setMessage(msg);
         adb.setNeutralButton("OK", null);
