@@ -26,6 +26,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -124,6 +125,7 @@ public class MasterActivity extends AppCompatActivity {
                 item.setIcon(R.mipmap.ic_action_lang_ru);
                 setLang(LANG_RU);
             }
+//            Toast.makeText(getApplicationContext(), "Временно не доступно", Toast.LENGTH_SHORT).show();
 
             return true;
         }
