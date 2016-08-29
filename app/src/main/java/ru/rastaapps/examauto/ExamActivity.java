@@ -151,7 +151,7 @@ public class ExamActivity extends AppCompatActivity {
             img.setMinimumWidth(getWindowManager().getDefaultDisplay().getWidth());
 
 
-            img.setMinimumHeight(300);
+            img.setMinimumHeight(600);
 
             ImgLay.addView(img);
         } else {
