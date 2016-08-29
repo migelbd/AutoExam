@@ -81,10 +81,12 @@ public class ResultActivity extends AppCompatActivity {
 
         for(ErrorsQuestions e : Helper.getInstance().getListErrors()){
             View item = getLayoutInflater().inflate(R.layout.item_error_result, null);
-            ImageView img = (ImageView)item.findViewById(R.id._img);
-            img.setMinimumWidth(getWindowManager().getDefaultDisplay().getWidth());
-            img.setMinimumHeight(600);
-            img.setImageDrawable(e.getIMG());
+            if (e.getIMG() != null) {
+                ImageView img = (ImageView)item.findViewById(R.id._img);
+                img.setMinimumWidth(getWindowManager().getDefaultDisplay().getWidth());
+                img.setMinimumHeight(600);
+                img.setImageDrawable(e.getIMG());
+            }
 
             ((TextView)item.findViewById(R.id._tvNumQuestion)).setText("Вопрос " + e.getNUM_QUESTION());
             ((TextView)item.findViewById(R.id._tvQuestion)).setText(e.getQUESTION());
