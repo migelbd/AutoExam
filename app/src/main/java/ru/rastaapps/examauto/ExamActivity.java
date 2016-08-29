@@ -62,6 +62,8 @@ public class ExamActivity extends AppCompatActivity {
     private int[] TICKETS; //масив номеров билетов для режима Микс
     private int[] QUESTIONS; //масив номеров вопросов
 
+    private boolean[] ANSWER_OK_QUESTIONS = new boolean[19];
+
     View vHeader;
     private HorizontalScrollView hScroll;
     private ArrayList<Integer> skiping_questions; //масив пропущенных вопросов
@@ -80,6 +82,11 @@ public class ExamActivity extends AppCompatActivity {
         hScroll = (HorizontalScrollView)findViewById(R.id.hScroll);
         Intent intent = getIntent();
         MODE_MIX = intent.getBooleanExtra("mode", false);
+        for(int i = 0;i<ANSWER_OK_QUESTIONS.length;i++){
+            ANSWER_OK_QUESTIONS[i] = false;
+        }
+
+
         if(MODE_MIX == true){
             //наполнение масивов номерами билетов и вопросов в режиме Микс
             TICKETS = new int[20];
@@ -176,9 +183,12 @@ public class ExamActivity extends AppCompatActivity {
     private AdapterView.OnItemClickListener listener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            
+
             Log.i(TAG, "QUESTION: " + QUESTION_NUMBER + " TICKET: " + TICKET_NUMBER + " Q_COUNT:" + QUESTION_COUNT);
             int goodAns = assetHelper.getGoodAns(TICKET_NUMBER, QUESTION_NUMBER);
+
+            setAnswerToQuestion(true, QUESTION_COUNT);
+
             if (i != 0) {
                 if(i == goodAns){ //проверка правильного ответа
                     //SnackBar
@@ -270,6 +280,8 @@ public class ExamActivity extends AppCompatActivity {
     }
 
     private void NextConfig(int CODE){
+
+
 
         listAnswers.removeHeaderView(vHeader); //очищает экран для следующего вопроса
         if(CODE == CODE_GOOD){
@@ -371,7 +383,8 @@ public class ExamActivity extends AppCompatActivity {
         }
 
         if(QUESTION_COUNT < 20) hScroll.smoothScrollTo(GetButtonX(QUESTION_COUNT), 0);
-
+        if(isAnswerToQuestion(QUESTION_COUNT)) listAnswers.setEnabled(false);
+        else listAnswers.setEnabled(true);
         CheckResult(); // проверка результатов
 
 
@@ -388,7 +401,7 @@ public class ExamActivity extends AppCompatActivity {
             SKIP_Q_MODE = true;
             QUESTION_COUNT = skiping_questions.get(_SKIPING_Q_COUNT);
             NextConfig(CODE_BTN_SELECTED);
-        } else if(good_answers_count >= 17 && QUESTION_COUNT > 20){ // если ответов верных больше 17 и вопрос 20 то открывается экран с резульататами
+        } else if(good_answers_count > 16 && QUESTION_COUNT > 20){ // если ответов верных больше 17 и вопрос 20 то открывается экран с резульататами
             Intent i = new Intent(this, ResultActivity.class);
             i.putExtra("result", true);
             i.putExtra("good", good_answers_count);
@@ -404,7 +417,7 @@ public class ExamActivity extends AppCompatActivity {
             i.putExtra("skip", skip_answers_count);
             startActivity(i);
             finish();
-        } else if(good_answers_count >= 17 && skip_answers_count < 3){
+        } else if(good_answers_count > 16 && skip_answers_count < 3 && SKIP_Q_MODE){
             Intent i = new Intent(this, ResultActivity.class);
             i.putExtra("result", true);
             i.putExtra("good", good_answers_count);
@@ -425,6 +438,13 @@ public class ExamActivity extends AppCompatActivity {
     }
     private void SetQuestionButtonColor(int btn, int color){
         ((Button)findViewById(QUESTIONS_BTNS[btn - 1])).setBackgroundColor(color);
+    }
+
+    private boolean isAnswerToQuestion(int _question){
+        return ANSWER_OK_QUESTIONS[_question - 1];
+    }
+    private void setAnswerToQuestion(boolean b, int _question){
+        ANSWER_OK_QUESTIONS[_question - 1] = b;
     }
 
     private void SetSkipQuestions(int _question_count){
