@@ -1,0 +1,3 @@
+﻿Întrucât din dreapta de intersecţie nu se apropie alte vehicule, veţi traversa intersecţia primul concomitent cu autoturismul roşu, deoarece traiectoria de deplasare a acestuia nu se intersectează cu traiectoria de deplasare a autoturismului albastru.
+
+P. 56 1), P. 59 4).

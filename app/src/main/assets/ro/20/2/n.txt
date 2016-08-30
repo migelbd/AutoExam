@@ -1,0 +1,3 @@
+﻿Indicatorul 1.7.1 «Intersecţie cu un drum fără prioritate» avertizează despre apropierea de intersecţia la trecerea căreia conducătorul are prioritate. La trecerea intersecţiei, apropierea de care ne avertizează indicatorul 1.6 «Intersecţie a drumurilor de semnificaţie echivalentă», conducătorul nu dispune de astfel de prioritate.
+
+Nota explicativă la anexa nr. 3, (I. INDICATOARE DE AVERTIZARE, 1.6, 1.7).

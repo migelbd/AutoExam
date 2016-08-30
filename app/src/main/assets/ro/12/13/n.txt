@@ -1,0 +1,3 @@
+﻿Întrucât din dreapta de intersecţie nu se apropie alte vehicule, veţi traversa intersecţia primul. Ulterior concomitent vor trece intersecţia microbuzul şi autoturismul roşu. Ultimul va vira la stânga autoturismul albastru.
+
+P. 59 4).

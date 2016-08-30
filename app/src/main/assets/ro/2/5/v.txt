@@ -1,0 +1,1 @@
+﻿Linia discontinuă dublă, la care lungimea haşurilor este de trei ori mai mare decât intervalele dintre acestea delimitează benzile:

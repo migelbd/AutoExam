@@ -1,0 +1,3 @@
+﻿Primul va traversa intersecţia camionul, care se apropie de intersecţie pe drumul cu prioritate. Tramvaiul şi troleibuzul se deplasează pe drumul fără prioritate, în cazul permisiunii concomitente şi în condiţii egale de deplasare, tramvaiul are prioritate faţă de troleibuz, astfel, el va vira la stânga al doilea. Troleibuzul va trece intersecţia ultimul.
+
+P. 56 4), P. 59 2).

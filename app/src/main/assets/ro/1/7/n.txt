@@ -1,0 +1,3 @@
+﻿În cazul dat, la semnalele semafoarelor din imagine, vehiculul de culoare albastră, care se află în nemijlocita apropiere de linia de oprire şi nu mai poate opri fără a recurge la frânarea bruscă, va continua deplasarea, iar vehiculul roşu va porni numai după includerea semnalului verde.
+
+P.20 2), 4).

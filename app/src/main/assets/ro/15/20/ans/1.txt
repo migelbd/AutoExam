@@ -1,0 +1,1 @@
+﻿Spaţiul parcurs de vehicul din momentul în care conducătorul vehiculului a observat pericolul, până la oprirea definitivă a acestuia.

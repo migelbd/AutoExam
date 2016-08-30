@@ -1,0 +1,3 @@
+﻿Indicatorul 5.45.2 «Intrare pe drumul cu bandă rezervată vehiculelor de rută» informează despre faptul că pe drumul care urmează a fi intersectat se află o bandă pe care vehiculele de rută circulă în sensul opus de circulaţie. Circulaţia altor vehicule pe această bandă este interzisă, în cazul dat, deplasarea este permisă înainte, la stânga sau înapoi.
+
+Nota explicativă la anexa nr. 3 (V. INDICATOARE DE INFORMARE ŞI ORIENTARE, a) De informare, 5.43,5.45.2).

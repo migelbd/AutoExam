@@ -1,0 +1,3 @@
+﻿Autoturismul se deplasează pe drumul cu prioritate, care în intersecţie îşi schimbă direcţia. Astfel, el va traversa intersecţia primul. Tramvaiul şi motocicleta, care se apropie de intersecţie pe drumul fără prioritate, trebuie să cedeze trecerea autoturismului.
+
+P. 59 2), 3).

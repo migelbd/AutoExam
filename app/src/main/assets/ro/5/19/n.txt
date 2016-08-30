@@ -1,0 +1,1 @@
+﻿La deplasarea în curbă forţa centrifugă se reduce în caz de reducere a vitezei de deplasare. Este cunoscut că forţa centrifugă este direct proporţională masei autovehiculului, pătratului vitezei şi invers proporţională razei curbei de viraj. Prin urmare, pentru ca forţa centrifugă să se micşoreze, trebuie redusă viteza.

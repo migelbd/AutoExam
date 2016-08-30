@@ -1,0 +1,3 @@
+﻿Primul va traversa intersecţia microbuzul, care se apropie de aceasta pe drumul cu prioritate. Concomitent cu microbuzul vor trece intersecţia autoturismul şi motocicleta, întrucât traiectoriile lor de deplasare nu se intersectează. Apoi va trece intersecţia camionul. Tramvaiul, ce se deplasează pe drumul fără prioritate, va trece intersecţia ultimul.
+
+P. 59 2), 3), 4).

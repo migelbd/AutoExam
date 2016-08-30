@@ -1,0 +1,1 @@
+﻿Se permite dacă numărul persoanelor nu depăşeşte numărul locurilor utilate.

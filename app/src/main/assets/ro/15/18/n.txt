@@ -1,0 +1,3 @@
+﻿Care este durata de timp maximă, de menţinere a unui garou hemostatic?
+
+Aplicarea garoului hemostatic conduce la compresiunea vaselor sangvine. Ca urmare se opreşte circulaţia sângelui în zona membrului aflată mai jos de locul de aplicare a garoului, fapt ce poate provoca necrotizarea ţesăturilor. Prin aceasta se explică durata maximă de menţinere a unui garou hemostatic (nu mai mult de o oră).

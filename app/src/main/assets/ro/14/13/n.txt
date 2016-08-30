@@ -1,0 +1,3 @@
+﻿Autobuzul şi camionul se apropie de intersecţie pe drumul cu prioritate. Primul va trece intersecţia autobuzul, care se apropie de aceasta din dreapta camionului, apoi camionul. Ultimul va traversa intersecţia autoturismul, ce se deplasează pe drumul fără prioritate.
+
+P. 59 2), 3), 4).

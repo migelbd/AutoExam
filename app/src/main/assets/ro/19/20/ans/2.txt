@@ -1,0 +1,1 @@
+﻿Producerea coliziunii în lanţ în caz de frânare bruscă a unuia din vehiculele din flux, mai cu seamă la deplasarea pe drumul acoperit cu zăpadă sau polei.

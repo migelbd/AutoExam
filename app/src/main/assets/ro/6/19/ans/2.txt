@@ -1,0 +1,1 @@
+﻿Numai la micşorarea culoarului de deplasare pentru vehiculele ce vin din sens opus, prin aceasta, fiind posibil impactul tangenţial cu alte vehicule.

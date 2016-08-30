@@ -1,0 +1,1 @@
+﻿Să puneţi în funcţiune avertizorul de avarie şi să continuaţi deplasarea fără a reduce viteza.

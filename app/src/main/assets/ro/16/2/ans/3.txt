@@ -1,0 +1,1 @@
+﻿Va reduce viteza, luând în consideraţie faptul că pe trecere pot apărea pietonii.

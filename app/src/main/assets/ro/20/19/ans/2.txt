@@ -1,0 +1,1 @@
+﻿Acesta, nesemnalizând manevra, brusc va începe deplasarea spre dreapta către pietonul ce-i semnalizează oprirea.

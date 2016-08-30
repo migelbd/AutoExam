@@ -1,0 +1,1 @@
+﻿Ridicarea capacităţii de trecere a drumului, întrucât într-o anumită perioadă de timp poate trece un număr mai mare de vehicule.

@@ -1,0 +1,3 @@
+﻿Primul va traversa intersecţia autoturismul roşu, care pe drumul cu prioritate se deplasează înainte. Autoturismul albastru va traversa intersecţia al doilea, concomitent cu cel alb, care se deplasează pe drumul fără prioritate, deoarece traiectoriile lor de deplasare nu se intersectează. Autoturismul verde va trece intersecţia ultimul.
+
+P. 56 1), P. 56 2), alineatul 1, P. 59 2).

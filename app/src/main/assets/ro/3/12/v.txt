@@ -1,0 +1,1 @@
+﻿Vehiculele din imagine vor traversa intersecţia în ordinea următoare:

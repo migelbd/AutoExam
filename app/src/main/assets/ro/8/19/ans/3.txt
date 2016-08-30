@@ -1,0 +1,1 @@
+﻿Măreşte probabilitatea de orbire de la lumina farurilor vehiculelor ce vin din sens opus.

@@ -1,0 +1,1 @@
+﻿Direcţia drumului cu prioritate în limitele intersecţiei.

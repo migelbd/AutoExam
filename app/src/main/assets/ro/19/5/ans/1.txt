@@ -1,0 +1,1 @@
+﻿Distanţa în kilometri până la cea mai apropiată intersecţie denivelată.

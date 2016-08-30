@@ -1,0 +1,3 @@
+﻿În cazul dat, microbuzul va traversa intersecţia concomitent cu autoturismul. Întrucât, tramvaiul se deplasează în direcţia săgeţii, aplicate în secţia suplimentara a semaforului, concomitent cu semnalul roşu, acesta nu este în condiţii egale de deplasare. Astfel, el trebuie să cedeze trecerea autoturismului roşu care virează la stânga.
+
+P. 56 4), P. 58 4).

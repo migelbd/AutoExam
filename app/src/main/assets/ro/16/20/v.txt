@@ -1,0 +1,1 @@
+﻿În cazul în care viteza de deplasare a automobilului creşte, câmpul vizual:

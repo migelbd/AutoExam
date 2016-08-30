@@ -1,0 +1,3 @@
+﻿La trecerea acestei intersecţii traiectoriile de deplasare a vehiculelor nu se intersectează. Astfel, toate vehiculele vor traversa intersecţia concomitent.
+
+P. 56 1).

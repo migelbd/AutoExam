@@ -1,0 +1,1 @@
+﻿Determină distanţa în kilometri până la localităţile însemnate, dislocate în direcţia de deplasare.

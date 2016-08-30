@@ -1,0 +1,3 @@
+﻿Înainte de-a începe depăşirea, conducătorul vehiculului verde trebuie să se asigure că conducătorul vehiculului alb nu a început depăşirea. În situaţia dată, conducătorul vehiculului alb, s-a angajat deja în depăşire. Prin urmare, conducătorul vehiculului verde nu trebuie să creeze obstacole vehiculului care-l depăşeşte.
+
+P. 51 a).

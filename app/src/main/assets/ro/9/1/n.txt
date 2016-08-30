@@ -1,0 +1,3 @@
+﻿Carosabil - porţiune din platforma drumului destinată circulaţiei vehiculelor. Drumul poate avea mai multe carosabile separate unul de altul prin benzi de separare. Bandă de separare - element al drumului, evidenţiat constructiv şi/sau prin marcaj, care separă părţile carosabile limitrofe şi care nu este destinat pentru deplasarea şi oprirea pe el a vehiculelor.
+
+P. 7, alineatul 11; P. 7, alineatul 9.

@@ -1,0 +1,1 @@
+﻿Vehiculul de culoare albastră, care se află în nemijlocita apropiere de intersecţie, imediat va opri la linia de oprire; vehiculul roşu va începe deplasarea.

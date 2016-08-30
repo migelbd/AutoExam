@@ -1,0 +1,3 @@
+﻿Intersecţia în care semafoarele nu funcţionează se consideră intersecţie cu circulaţia nedirijată. În această situaţie primul va traversa intersecţia autoturismul galben, care se apropie de aceasta pe drumul cu prioritate. Concomitent cu cel galben va traversa intersecţia autoturismul albastru, apropiindu-se de intersecţie pe drumul fără prioritate, deoarece, traiectoriile lor de deplasare nu se intersectează. Tramvaiul, care circulă pe drumul fără prioritate, având drept primordial în condiţii egale de deplasare faţa de autoturismul roşu va trece intersecţia al doilea. Autoturismul roşu va traversa intersecţia ultimul.
+
+P. 56 1), 4), P. 59 2), 3).

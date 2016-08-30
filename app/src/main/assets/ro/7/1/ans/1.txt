@@ -1,0 +1,1 @@
+﻿Imobilizarea vehiculului pe un timp nu mai mare de 5 min., precum şi pe un timp mai mare, în cazul în care este necesar de a îmbarca sau a debarca persoane, ori a încărca sau descărca bunuri.

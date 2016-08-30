@@ -1,0 +1,3 @@
+﻿Intersecţia în care semafoarele nu funcţionează se consideră intersecţie cu circulaţia nedirijată. În această situaţie autoturismul roşu va traversa intersecţia primul, deoarece se apropie de aceasta pe drumul cu prioritate.
+
+P. 59 2).

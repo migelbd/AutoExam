@@ -1,0 +1,1 @@
+﻿Momentul de comutare a luminii farurilor nu este semnificativ, întrucât orbirea se exclude în ambele cazuri.

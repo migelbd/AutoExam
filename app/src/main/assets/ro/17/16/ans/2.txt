@@ -1,0 +1,1 @@
+﻿Să asigure deplasarea nestânjenită a acestuia, indiferent de direcţia lui de deplasare, inclusiv să elibereze banda pe care se deplasează acesta, poziţionându-se cât mai aproape de bordură, pe acostament sau chiar, în caz de necesitate, să oprească.

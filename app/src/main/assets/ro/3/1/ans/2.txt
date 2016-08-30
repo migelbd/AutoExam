@@ -1,0 +1,1 @@
+﻿Imobilizarea vehiculului în scopul determinării situaţiei reale de drum în care se află vehiculul la momentul respectiv.

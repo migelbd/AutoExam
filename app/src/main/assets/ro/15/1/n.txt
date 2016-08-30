@@ -1,0 +1,3 @@
+﻿Vehicul lung - vehiculul a cărui lungime depăşeşte 12 m.
+
+P. 7, alineatul 51.

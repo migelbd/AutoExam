@@ -1,0 +1,1 @@
+﻿Să pună în funcţiune avertizorul de avarie şi să continue deplasarea.

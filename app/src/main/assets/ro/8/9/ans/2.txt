@@ -1,0 +1,1 @@
+﻿Da, doar în cazul în care câmpul vizual, în ambele direcţii este mai mare de 100 m.

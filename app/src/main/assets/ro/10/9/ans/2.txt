@@ -1,0 +1,1 @@
+﻿Este permisă dacă viteza autocamioanelor este sub 30 km/h.

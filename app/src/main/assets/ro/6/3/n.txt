@@ -1,0 +1,3 @@
+﻿În situaţia din imagine, tractorul de culoare roşie, viteza căruia prin caracteristica tehnică este de 30 km/h, nu poate să circule pe banda din stânga cu toate că viteza vehiculului care circulă pe banda din dreapta este sub 30 km/h. Pe fondul indicatorului 5.39.2 «Bandă suplimentară» este aplicat indicatorul 4.6 «Viteză minimă limitată» care nu permite circulaţia cu viteza mai mică decât cea menţionat pe indicator.
+
+Nota explicativă la anexa nr. 3 (IV. INDICATOARE DE SENS OBLIGATORIU, 4.6, V. INDICATOARE DE INFORMARE ŞI ORIENTARE, a) De informare, 5.39.1 - 5.39.3, alineatul 1).

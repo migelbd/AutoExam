@@ -1,0 +1,3 @@
+﻿Indicatorul 1.13.1 «Curbe periculoase» avertizează despre apropiere de un sector de drum cu curbe periculoase din care prima este la dreapta. În afara localităţilor acest indicator se instalează la o distanţă de 150 - 300 m până la începutul sectorului de drum periculos. Panoul adiţional 6.3.1 «Zonă de acţiune», în cazul dat, indică lungimea acestui sector de drum periculos.
+
+Nota explicativă la anexa nr. 3 (I. INDICATOARE DE AVERTIZARE, 1.13.1, Particularităţi de utilizare a indicatoarelor de avertizare, alineatul 1, VI. INDICATOARE DE INFORMARE SUPLIMENTARĂ /PANOURI ADIŢIONALE/, 6.3.1, Particularităţi de utilizare a panourilor adiţionale).

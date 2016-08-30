@@ -1,0 +1,1 @@
+﻿Este permisă în cazul în care viteza vehiculului ce urmează a fi depăşit este sub 30 km/h.

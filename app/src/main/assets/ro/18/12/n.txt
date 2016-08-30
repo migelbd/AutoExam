@@ -1,0 +1,3 @@
+﻿Primă va trece motocicleta, deoarece se apropie de intersecţie pe drumul cu prioritate. Ulterior va trece camionul, care se deplasează înainte pe drumul fără prioritate, apoi autoturismul care virează la stânga de pe acelaşi drum.
+
+P. 56 2), alineatul 1, P. 59 2).

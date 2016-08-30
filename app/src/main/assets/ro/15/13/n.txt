@@ -1,0 +1,3 @@
+﻿Autoturismul va traversa intersecţia primul, deoarece traiectoria de mers a acestuia nu se intersectează cu traiectoria camionului care se apropie de intersecţie din dreapta. Ulterior pe rând vor trece intersecţia microbuzul şi camionul ce virează la stânga.
+
+P. 56 2), alineatul 1, P. 59 4).

@@ -1,0 +1,1 @@
+﻿Acesta, mărind viteza şi semnalizând manevra, lent va începe manevra de deplasare spre pietonul ce-i semnalizează oprirea.

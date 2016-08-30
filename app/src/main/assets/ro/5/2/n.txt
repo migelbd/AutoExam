@@ -1,0 +1,3 @@
+﻿În cazul în care panta şi rampa urmează consecutiv una după alta, indicatoarele 1.14.1, 1.14.2 «Pantă cu declivitate mare», «Rampă cu declivitate mare» pot fi instalate imediat înaintea acestora fără de panoul 6.1.1. «Distanţa până la locul intrării în vigoare a indicatorului».
+
+Nota explicativă la anexa nr. 3 (I. INDICATOARE DE AVERTIZARE, 1.14.1, 1.14.2, Particularităţi de utilizare a indicatoarelor de avertizare, alineatul 6).

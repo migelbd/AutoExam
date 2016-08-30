@@ -1,0 +1,3 @@
+﻿În semaforul reversibil semnalul roşu (două bare încrucişate) - interzice circulaţia, galben (săgeată înclinată spre dreapta) - informează despre comutarea semnalului verde cu cel roşu şi obligă preselectarea benzii indicate de săgeată, cel verde (săgeată îndreptată în jos) - permite circulaţia pe banda reversibilă. În cazul în care semaforul reversibil permite circulaţia pe bandă, linia 1.9 care separă fluxurile de circulaţie în sensuri opuse, este interzis de a o intersecta. Prin urmare, la acest semnal al semaforului deplasarea se permite pe traiectoriile 2, 3, 4 sau 5.
+
+P. 22 1), Comportamentul participanţilor la trafic faţă de cerinţele marcajelor orizontale, alineatul 5.

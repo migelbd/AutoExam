@@ -1,0 +1,1 @@
+﻿Vehiculul destinat instruirii, poate să se deplaseze pe itinerarele autorizate de poliţia rutieră:

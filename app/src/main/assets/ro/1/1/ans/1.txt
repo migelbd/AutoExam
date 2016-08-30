@@ -1,0 +1,1 @@
+﻿Devansarea unui vehicul în mers, în cazul în care se impune ieşirea de pe banda de circulaţie iniţială. Deplasarea vehiculelor pe o bandă a carosabilului cu o viteză mai mare decât viteză vehiculelor de pe banda alăturată nu se consideră depăşire.

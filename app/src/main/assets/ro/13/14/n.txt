@@ -1,0 +1,3 @@
+﻿Primul va traversa intersecţia autocamionul, întrucât din dreapta acestuia de intersecţie nu se apropie alte vehicule. Ulterior, pe rând, conducându-se de aceeaşi regulă, vor trece intersecţia autoturismul şi motocicleta.
+
+P. 59 4).

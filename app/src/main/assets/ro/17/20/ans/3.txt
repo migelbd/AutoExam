@@ -1,0 +1,1 @@
+﻿Poate conduce la reducerea câmpului vizual în timpul mersului cu spatele.

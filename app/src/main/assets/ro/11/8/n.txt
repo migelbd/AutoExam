@@ -1,0 +1,3 @@
+﻿Încalcă ordinea conducătorul autocamionului, deoarece în cazul în care drumul este amenajat cu bandă de accelerare, la intrarea pe acest drum, conducătorul trebuie să demareze pe această bandă, încorporându-se în fluxul de transport, fără a crea obstacole vehiculelor din acest flux.
+
+P. 40 4), alineatul 2.

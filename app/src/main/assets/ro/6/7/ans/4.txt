@@ -1,0 +1,1 @@
+﻿De a schimba direcţia de mers spre stânga sau de a întoarce.

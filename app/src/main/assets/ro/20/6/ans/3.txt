@@ -1,0 +1,1 @@
+﻿Înseamnă că timpul rezervat semnalului roşu expiră, fără ca prin aceasta să se modifice semnificaţia de interzicere a trecerii.

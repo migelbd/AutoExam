@@ -1,0 +1,3 @@
+﻿Intersecţia în care semafoarele nu funcţionează se consideră intersecţie cu circulaţia nedirijată. Primul va traversa intersecţia camionul, care se apropie de aceasta pe drumul cu prioritate. Concomitent cu camionul va trece autoturismul verde, care se deplasează pe drumul fără prioritate, deoarece traiectoriile lor de deplasare nu se intersectează. Ultimul va traversa intersecţia autoturismul roşu, virând la dreapta de pe drumul fără prioritate.
+
+P. 56 1), P.59 1), 2), 3).

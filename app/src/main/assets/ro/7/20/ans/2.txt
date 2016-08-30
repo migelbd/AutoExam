@@ -1,0 +1,1 @@
+﻿Spaţiul de oprire să fie mai mic decât distanţa de vizibilitate.

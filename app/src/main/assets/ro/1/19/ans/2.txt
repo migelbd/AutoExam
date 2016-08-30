@@ -1,0 +1,1 @@
+﻿Distanţa parcursă de vehicul după momentul în care a început frânarea până la oprirea definitivă a vehiculului.

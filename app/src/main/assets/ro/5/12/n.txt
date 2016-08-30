@@ -1,0 +1,3 @@
+﻿Microbuzul ce se deplasează pe drumul cu prioritate va traversa intersecţia primul. Apoi, pe rând, vor trece intersecţia tramvaiul şi autoturismul, care se apropie de aceasta pe drumurile fără prioritate.
+
+P. 56 4), P. 59 2), 3).

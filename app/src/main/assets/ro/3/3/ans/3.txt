@@ -1,0 +1,1 @@
+﻿Să puneţi în funcţiune semnalizatorul de direcţie şi să vă deplasaţi în direcţia indicată.

@@ -1,0 +1,1 @@
+﻿Să opriţi la indicator «Trecerea fără oprire interzisă», şi imediat după ce va trece ultimul vagon, să reluaţi deplasarea.

@@ -1,0 +1,3 @@
+﻿Autoturismul albastru va trece intersecţia primul, deoarece se apropie de aceasta pe drumul cu prioritate. Autoturismul roşu şi motocicleta se deplasează pe drumurile fără prioritate şi, întrucât autoturismul roşu se apropie de intersecţie din dreapta motocicletei, el o va trece al doilea.
+
+P. 59 2), 3), 4).

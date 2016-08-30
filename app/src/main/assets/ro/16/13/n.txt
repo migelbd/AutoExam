@@ -1,0 +1,3 @@
+﻿Primul va traversa intersecţia autovehiculul destinat stingerii incendiilor, deoarece în cazul executării misiunii urgente de serviciu, acesta are prioritate faţa de alte vehicule. Apoi, pe rând, vor trece intersecţia microbuzul şi motocicleta care, efectuând virarea la stânga, va ceda trecerea autobuzului.
+
+P. 56 2), alineatul 1, P. 105, P.106 1).

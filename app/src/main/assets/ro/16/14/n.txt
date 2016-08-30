@@ -1,0 +1,3 @@
+﻿Vehiculele, ce vin din sensuri opuse şi efectuează simultan manevra de virare la stânga, trebuie să lase centrul intersecţiei pe dreapta de vehicul. Astfel, această manevră le este permisă pe traiectoriile A şi С.
+
+P. 56 2), alineatul 2.

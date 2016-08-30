@@ -1,0 +1,1 @@
+﻿Reduceţi viteza, întrucât este posibilă devierea automobilului de la traiectoria dată de deplasare.

@@ -1,0 +1,1 @@
+﻿Se permite în cazul în care garajul sau punctul de reparaţie se află nu mai departe de următoarea intersecţie.

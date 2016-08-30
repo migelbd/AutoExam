@@ -1,0 +1,3 @@
+﻿Ambele tramvaie şi autoturismul se deplasează pe drumurile fără prioritate, întrucât tramvaiul 2 se apropie de intersecţie din dreapta tramvaiului 1, el o va trece primul concomitent cu autoturismul, deoarece traiectoriile lor de deplasare nu se intersectează. Ultimul va traversa intersecţia tramvaiul 1.
+
+P. 56 1), P. 59 3), 4).

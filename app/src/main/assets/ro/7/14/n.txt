@@ -1,0 +1,3 @@
+﻿Al treilea va traversa intersecţia microbuzul, cedând trecerea autoturismului albastru, ce se apropie de intersecţie din dreapta lui, care, la rândul său, va ceda trecerea autoturismului roşu, ce se apropie de intersecţie din dreapta sa.
+
+P. 59 4).

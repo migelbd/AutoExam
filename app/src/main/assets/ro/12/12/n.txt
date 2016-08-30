@@ -1,0 +1,3 @@
+﻿Autoturismele roşu şi galben se apropie de intersecţie pe drumul cu prioritate şi o vor traversa pe rând. Autoturismele albastru şi verde se deplasează pe drumurile fără prioritate. Deoarece autoturismul albastru se apropie de intersecţie din dreapta faţă de autoturismul verde, acesta va traversa intersecţia al treilea.
+
+P. 59 2), 3), 4).

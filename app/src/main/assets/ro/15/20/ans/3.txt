@@ -1,0 +1,1 @@
+﻿Spaţiul parcurs de vehicul din momentul începerii frânării, până la oprirea definitivă a vehiculului.

@@ -1,0 +1,1 @@
+﻿Va pune în funcţiune semnalizatorul de virare la dreapta şi va continua deplasarea în direcţia indicată de săgeată.

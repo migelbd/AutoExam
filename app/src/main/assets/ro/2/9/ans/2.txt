@@ -1,0 +1,1 @@
+﻿Se permite dacă viteza microbuzului este sub 30 km/h.
