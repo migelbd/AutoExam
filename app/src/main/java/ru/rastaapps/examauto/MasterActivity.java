@@ -48,7 +48,13 @@ public class MasterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_master);
         sPref = getPreferences(MODE_PRIVATE);
+        Locale loc = Locale.getDefault();
+
         LANG_CODE = sPref.getInt("langcode", LANG_DEFAULT);
+
+        if(loc.getLanguage().equals("ru")) LANG_CODE = LANG_RU;
+        else if(loc.getLanguage().equals("ro")) LANG_CODE = LANG_RO;
+        else LANG_CODE = LANG_RU;
 
         if(LANG_CODE == LANG_RO){
             setLang(LANG_RO, false);
@@ -59,7 +65,7 @@ public class MasterActivity extends AppCompatActivity {
 
 
 
-        Locale loc = Locale.getDefault();
+
         Log.d("Maseter", loc.getLanguage());
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(getResources().getString(R.string.app_name));
