@@ -477,7 +477,7 @@ public class ExamActivity extends AppCompatActivity {
             i.putExtra("result", true);
             i.putExtra("good", good_answers_count);
             i.putExtra("bad", bad_answers_count);
-            i.putExtra("skip", skip_answers_count);
+            i.putExtra("skip", getNotAnsweredCount());
             startActivity(i);
             finish();
         } else if(bad_answers_count > 3){ //если больше 3 ошибок, открывается экран с результатами
@@ -485,7 +485,7 @@ public class ExamActivity extends AppCompatActivity {
             i.putExtra("result", false);
             i.putExtra("good", good_answers_count);
             i.putExtra("bad", bad_answers_count);
-            i.putExtra("skip", skip_answers_count);
+            i.putExtra("skip", getNotAnsweredCount());
             startActivity(i);
             finish();
         } else if(good_answers_count > 16 && skip_answers_count < 3 && SKIP_Q_MODE){
@@ -493,7 +493,7 @@ public class ExamActivity extends AppCompatActivity {
             i.putExtra("result", true);
             i.putExtra("good", good_answers_count);
             i.putExtra("bad", bad_answers_count);
-            i.putExtra("skip", skip_answers_count);
+            i.putExtra("skip", getNotAnsweredCount());
             startActivity(i);
             finish();
         }
@@ -543,5 +543,9 @@ public class ExamActivity extends AppCompatActivity {
 
 
         adb.show();
+    }
+
+    private int getNotAnsweredCount(){
+        return 20 - (good_answers_count + bad_answers_count);
     }
 }
