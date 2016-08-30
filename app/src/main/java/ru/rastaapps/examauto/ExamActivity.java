@@ -26,6 +26,7 @@ import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class ExamActivity extends AppCompatActivity {
 
@@ -75,12 +76,68 @@ public class ExamActivity extends AppCompatActivity {
     int[] QUESTIONS_BTNS = {R.id.v1, R.id.v2, R.id.v3, R.id.v4, R.id.v5, R.id.v6, R.id.v7, R.id.v8, R.id.v9, R.id.v10,
             R.id.v11, R.id.v12, R.id.v13, R.id.v14, R.id.v15, R.id.v16, R.id.v17, R.id.v18, R.id.v19, R.id.v20}; //масив ИД кнопок для индикации и переключения вопросов
 
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        QUESTION_COUNT = savedInstanceState.getInt("question_count");
+        QUESTION_NUMBER = savedInstanceState.getInt("question_number");
+        TICKET_NUMBER = savedInstanceState.getInt("ticket_number");
+        TICKET_NUMBER = savedInstanceState.getInt("last_bt_sel");
+        good_answers_count = savedInstanceState.getInt("good_count");
+        bad_answers_count = savedInstanceState.getInt("bad_count");
+        skip_answers_count = savedInstanceState.getInt("skip_count");
+        MODE_MIX = savedInstanceState.getBoolean("mode_mix");
+        arrayAns = savedInstanceState.getStringArrayList("array_ans");
+        skiping_questions = savedInstanceState.getIntegerArrayList("skiping_questions");
+        ANSWER_OK_QUESTIONS = savedInstanceState.getBooleanArray("ans_ok");
+        SKIP_Q_MODE = savedInstanceState.getBoolean("skip_mode");
+        time = savedInstanceState.getLong("timer");
+        STATE_COLOR_BTNS = savedInstanceState.getIntArray("state_color_btn");
+        TICKETS = savedInstanceState.getIntArray("tickets");
+        QUESTIONS = savedInstanceState.getIntArray("questions");
+        _SKIPING_Q_COUNT = savedInstanceState.getInt("skiping_count");
+        listErrors = Helper.getInstance().getListErrors();
+
+
+
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putInt("question_count",QUESTION_COUNT);
+        outState.putInt("question_number",QUESTION_NUMBER);
+        outState.putInt("ticket_number",TICKET_NUMBER);
+        outState.putInt("last_bt_sel",TICKET_NUMBER);
+
+        outState.putInt("good_count",good_answers_count);
+        outState.putInt("bad_count",bad_answers_count);
+        outState.putInt("skip_count",skip_answers_count);
+        outState.putBoolean("mode_mix", MODE_MIX);
+        outState.putStringArrayList("array_ans", arrayAns);
+        outState.putIntegerArrayList("skiping_questions", skiping_questions);
+        outState.putBooleanArray("ans_ok", ANSWER_OK_QUESTIONS);
+        Helper.getInstance().setListErrors(listErrors);
+        outState.putBoolean("skip_mode", SKIP_Q_MODE);
+        outState.putLong("timer", time);
+        outState.putIntArray("state_color_btn", STATE_COLOR_BTNS);
+        outState.putIntArray("tickets", TICKETS);
+        outState.putIntArray("questions", QUESTIONS);
+        outState.putInt("skiping_count", _SKIPING_Q_COUNT);
+    }
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam);
         TICKET_NUMBER = Helper.getInstance().getTICKET_NUMBER();
-        assetHelper = new AssetHelper(this, "ru");
+        Locale loc = Locale.getDefault();
+        assetHelper = new AssetHelper(this, loc.getLanguage());
         listErrors = new ArrayList<>();
         hScroll = (HorizontalScrollView)findViewById(R.id.hScroll);
         Intent intent = getIntent();
