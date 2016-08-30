@@ -62,5 +62,6 @@
     <string name="txt_res_no_ans">Не отвеченных:</string>
     <string name="txt_res_winner">Вы успешно завершили экзамен</string>
     <string name="txt_res_looser">Вы провалили экзамен</string>
+    <string name="act_menu_lang">Язык</string>
 
 </resources>

@@ -4,14 +4,14 @@
     tools:context="ru.rastaapps.examauto.MasterActivity">
     <item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
+        android:orderInCategory="200"
         android:title="@string/action_settings"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/action_lang"
         android:orderInCategory="100"
-        android:title="Язык"
+        android:title="@string/act_menu_lang"
         app:showAsAction="always"
         android:icon="@mipmap/ic_action_lang_ru"
         />

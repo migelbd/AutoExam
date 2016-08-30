@@ -7,6 +7,7 @@ import android.os.Build;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -15,6 +16,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -37,6 +39,7 @@ public class MasterActivity extends AppCompatActivity {
     private int LANG_CODE;
     private int LANG_RU = 100;
     private int LANG_RO = 200;
+    private int LANG_DEFAULT = 300;
     private SharedPreferences sPref;
     private ViewPager mViewPager;
 
@@ -45,10 +48,21 @@ public class MasterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_master);
         sPref = getPreferences(MODE_PRIVATE);
-        LANG_CODE = sPref.getInt("langcode", LANG_RU);
+        LANG_CODE = sPref.getInt("langcode", LANG_DEFAULT);
+
+        if(LANG_CODE == LANG_RO){
+            setLang(LANG_RO, false);
+        } else if(LANG_CODE == LANG_RU){
+            setLang(LANG_RU, false);
+        }
 
 
+
+
+        Locale loc = Locale.getDefault();
+        Log.d("Maseter", loc.getLanguage());
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(getResources().getString(R.string.app_name));
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -68,12 +82,13 @@ public class MasterActivity extends AppCompatActivity {
     }
 
 
-    private void setLang(int l_code){
+    private void setLang(int l_code, boolean restart){
         Locale l = null;
         if(l_code == LANG_RU) l = new Locale("ru");
         else if(l_code == LANG_RO) l = new Locale("ro");
 
         Locale.setDefault(l);
+
         Configuration config = new Configuration();
         if(Build.VERSION.SDK_INT >= 17){
             config.setLocale(l);
@@ -81,10 +96,12 @@ public class MasterActivity extends AppCompatActivity {
             config.locale = l;
         }
         getBaseContext().getResources().updateConfiguration(config, null);
-        Intent i = getBaseContext().getPackageManager()
-                .getLaunchIntentForPackage( getBaseContext().getPackageName() );
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(i);
+        if (restart) {
+            Intent i = getBaseContext().getPackageManager()
+                    .getLaunchIntentForPackage( getBaseContext().getPackageName() );
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(i);
+        }
 
 
     }
@@ -116,14 +133,14 @@ public class MasterActivity extends AppCompatActivity {
                 ed.putInt("langcode", LANG_RO);
                 ed.commit();
                 item.setIcon(R.mipmap.ic_action_lang_ro);
-                setLang(LANG_RO);
+                setLang(LANG_RO, true);
             } else if(LANG_CODE == LANG_RO){
                 sPref = getPreferences(MODE_PRIVATE);
                 SharedPreferences.Editor ed = sPref.edit();
                 ed.putInt("langcode", LANG_RU);
                 ed.commit();
                 item.setIcon(R.mipmap.ic_action_lang_ru);
-                setLang(LANG_RU);
+                setLang(LANG_RU, true);
             }
 //            Toast.makeText(getApplicationContext(), "Временно не доступно", Toast.LENGTH_SHORT).show();
 

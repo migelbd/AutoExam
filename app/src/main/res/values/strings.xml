@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Симулятор экзамена ПДД</string>
+    <string name="app_name">Симулятор экзамена ПДД0</string>
     <string name="action_settings">Настройки</string>
 
     <string name="page_title_pdd">ПДД</string>
@@ -62,5 +62,6 @@
     <string name="txt_res_no_ans">Не отвеченных:</string>
     <string name="txt_res_winner">Вы успешно завершили экзамен</string>
     <string name="txt_res_looser">Вы провалили экзамен</string>
+    <string name="act_menu_lang">Язык</string>
 
 </resources>
