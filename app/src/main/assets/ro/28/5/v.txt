@@ -1,0 +1,1 @@
+﻿Linia lată discontinuă, la care lungimea haşurilor este de trei ori mai mică decât intervalele dintre acestea separă (delimitează):

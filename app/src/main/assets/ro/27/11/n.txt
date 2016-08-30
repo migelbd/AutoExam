@@ -1,0 +1,3 @@
+﻿Primul va traversa autoturismul roşu, deoarece se apropie de intersecţie pe drumul cu prioritate. Autoturismul albastru, care virează la stânga şi, de asemenea, se apropie de intersecţie pe drumul cu prioritate, va trece al doilea concomitent cu cel verde, deoarece traiectoriile de deplasare a acestora nu se intersectează.
+
+P. 56 1), P. 56 2), alineatul 1, P. 59 2).

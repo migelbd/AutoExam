@@ -1,0 +1,1 @@
+﻿Conform proceselor fizice ce au loc în timpul frânării autovehiculului, spaţiul de frânare este direct proporţional pătratului vitezei acestuia. Prin urmare, în cazul în care viteza creşte de trei ori, spaţiul de frânare va creşte de 9 ori.

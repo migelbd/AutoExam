@@ -1,0 +1,5 @@
+﻿Care din marcajele din imagini determină locul, în care este interzisă numai staţionarea vehiculelor?
+
+Pentru determinarea locului, în care este interzisă numai staţionarea vehiculelor se utilizează marcajul 1.10 din imaginea A. Marcajele din imaginile В şi С au alte semnificaţii.
+
+Nota explicativă la anexa nr. 4 (I. SEMNIFICAŢIA MARCAJELOR ORIZONTALE, A. Marcaje longitudinale, 1.10).

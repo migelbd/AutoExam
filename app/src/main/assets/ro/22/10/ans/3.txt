@@ -1,0 +1,1 @@
+﻿Se permite dacă vehiculul ce se depăşeşte este solitar.

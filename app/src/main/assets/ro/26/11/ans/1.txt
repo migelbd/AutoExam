@@ -1,0 +1,1 @@
+﻿Va traversa intersecţia, folosindu-se de prioritate în trecere, anterior utilizând semnalul sonor.

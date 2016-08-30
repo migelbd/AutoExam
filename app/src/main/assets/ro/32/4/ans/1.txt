@@ -1,0 +1,1 @@
+﻿Este permisă deplasarea vehiculelor, doar într-o coloană organizată, ocolirea poate fi efectuată conform direcţiei indicate.

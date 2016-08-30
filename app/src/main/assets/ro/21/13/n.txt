@@ -1,0 +1,3 @@
+﻿Intersecţia în care semafoarele nu funcţionează se consideră intersecţie cu circulaţia nedirijată. În cazul dat, ultimul va traversa intersecţia autoturismul alb, deoarece el trebuie să cedeze trecerea camionului ce se apropie de intersecţie din dreapta lui, care la rândul său, virând la stânga, va ceda trecerea autoturismului albastru ce virează la dreapta din direcţie opusă.
+
+P. 56 2), alineatul 1, P. 59 4).

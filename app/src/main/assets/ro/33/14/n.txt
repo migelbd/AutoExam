@@ -1,0 +1,3 @@
+﻿Primul va traversa intersecţia camionul deoarece traiectoria de deplasare a acestuia nu se intersectează cu traiectoria autoturismului ce se apropie din dreapta. Cu toate că în intersecţia, în formă de litera «T» din dreapta motocicletei care virează la stânga nu sunt alte vehicule, aceasta va traversa intersecţia a doua, cedând trecerea camionului ce virează la dreapta din direcţia opusă. Autoturismul va traversa intersecţia ultimul.
+
+P. 56 2), alineatul 1, P. 59 4).

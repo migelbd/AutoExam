@@ -1,0 +1,3 @@
+﻿Motocicleta şi autoturismul se apropie de intersecţie pe drumul cu prioritate. Prima va traversa intersecţia motocicleta, care se apropie de aceasta din dreapta autoturismului, apoi autoturismul. Camionul, ce se deplasează pe drumul fără prioritate, va trece intersecţia ultimul.
+
+P. 59 2), 3), 4).

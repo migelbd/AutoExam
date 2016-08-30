@@ -1,0 +1,1 @@
+﻿Elementul drumului evidenţiat prin marcaj care nu este destinat pentru deplasarea şi oprirea pe el a vehiculelor.

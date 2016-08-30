@@ -1,0 +1,3 @@
+﻿Panoul adiţional 6.4.3 «Zonă de acţiune» care este instalat nemijlocit sub indicatorul 3.31 «Oprire interzisă» suspendă acţiunea a indicatorului 3.31 «Oprire interzisă» instalat precedent.
+
+Nota explicativă la anexa nr. 3 (III. INDICATOARE DE INTERZICERE ŞI RESTRICŢIE, 3.31, VI. INDICATOARE DE INFORMARE SUPLIMENTARĂ /PANOURI ADITIONALE/, 6.4.3, Particularităţi de utilizare a panourilor adiţionale).

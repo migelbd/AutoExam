@@ -1,0 +1,3 @@
+﻿Camionul şi autoturismul verde se apropie de intersecţie pe drumul cu prioritate. Primul va traversa intersecţia camionul, care se apropie de aceasta din dreapta autoturismului verde, apoi autoturismul verde. Ulterior, pe rând vor trece intersecţia autobuzul şi autoturismul galben, ce se deplasează pe drumurile fără prioritate.
+
+P. 59 2), 3), 4).

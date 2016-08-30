@@ -1,0 +1,1 @@
+﻿Nu funcţionează ieşirile de avarie şi dispozitivele de acţionare a acestora.

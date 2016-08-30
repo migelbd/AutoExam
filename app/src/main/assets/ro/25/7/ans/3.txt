@@ -1,0 +1,1 @@
+﻿Permite virarea la stânga şi întoarcerea numai în cazul includerii concomitente cu semnalul verde al semaforului.

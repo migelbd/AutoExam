@@ -1,0 +1,1 @@
+﻿Vehiculului de rută în cazul deplasării pe banda semnalizată prin indicatorul «Drum cu bandă rezervată vehiculelor de rută» şi/sau marcajul respectiv, în întâmpinarea fluxului de vehicule.

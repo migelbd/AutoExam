@@ -1,0 +1,1 @@
+﻿Timpul (în secunde) disponibil până la schimbarea semnalului.

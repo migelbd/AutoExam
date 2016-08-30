@@ -1,0 +1,1 @@
+﻿Se permite dacă de trecere nu se apropie trenul sau alt vehicul feroviar.

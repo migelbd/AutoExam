@@ -1,0 +1,1 @@
+﻿Indicaţi ordinea de traversare a intersecţiei, în cazul în care în semafoarele din imagine funcţionează semnalul galben intermitent:

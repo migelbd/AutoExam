@@ -1,0 +1,3 @@
+﻿Deplasarea cu spatele, pentru a lua pasagerul care se află pe viaduct, nu poate fi utilizată, deoarece pe viaducte această manevră este interzisă.
+
+P. 41 1) b), 2), alineatul 3.

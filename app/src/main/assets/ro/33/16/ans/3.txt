@@ -1,0 +1,1 @@
+﻿Opri la marginea carosabilului ce urmează a fi intersectat, reluând deplasarea după ce va trece autovehiculul la care este pus în funcţiune dispozitivul cu lumina de culoare albastră şi semnalul sonor special.

@@ -1,0 +1,1 @@
+﻿Să nu depăşească limitele de gabarit ale vehiculului în plan longitudinal spate mai mult de 0,8 m.

@@ -1,0 +1,3 @@
+﻿Pe drumurile cu trei şi mai multe benzi pe sens, autocamioanele cu masa maximă autorizată ce depăşeşte 3500 kg, pot ocupa banda extremă din stânga numai pentru a vira la stânga sau a întoarce. Însă, în cazul dat, masa maximă autorizată a camionului nu depăşeşte 3500 kg. Prin urmare, deplasarea înainte i se permite pe oricare din benzi.
+
+P. 43 1) b).

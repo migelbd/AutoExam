@@ -1,0 +1,3 @@
+﻿Intrând pe drumul cu circulaţia dublu sens, care are trei benzi pentru circulaţie, este necesar să se ia în calcul faptul că, banda mijlocie a acestui drum este destinată pentru vehiculele care virează la stânga. În cazul dat, efectuează regulamentar virarea numai conducătorul camionului, care finisează această manevră fără ca să ajungă pe banda de sens opus.
+
+P. 40 3), P. 42 4), alineatul 1.

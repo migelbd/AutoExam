@@ -1,0 +1,1 @@
+﻿Spaţiul (în metri) recomandat pentru a opri înaintea intersecţiei la apariţia semnalului roşu.

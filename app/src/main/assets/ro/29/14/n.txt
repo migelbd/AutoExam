@@ -1,0 +1,3 @@
+﻿În situaţia dată veţi traversa intersecţia ultimul cedând trecerea microbuzului şi autoturismului roşu, ce se apropie din dreapta, care, la rândul lor, vor ceda trecerea autoturismului alb ce se apropie de intersecţie din dreapta lor.
+
+P. 59 4).

@@ -1,0 +1,1 @@
+﻿Permite virarea la stânga şi întoarcerea indiferent de semnalul de bază a semaforului.

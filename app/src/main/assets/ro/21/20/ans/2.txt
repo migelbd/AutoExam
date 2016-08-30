@@ -1,0 +1,1 @@
+﻿Comportamentul vehiculului în timpul frânării şi deplasării acestuia cu viteză înaltă în curbă.

@@ -1,0 +1,3 @@
+﻿Pentru determinarea locului de oprire în staţie a vehiculelor de rută (autobuzelor, troleibuzelor) sau locului de staţionare a taximetrelor se utilizează marcajul 1.17, prezentat doar în imaginea B. Marcajele prezentate în imaginile Aşi С au altă semnificaţie.
+
+Nota explicativă la anexa nr. 4 (I. SEMNIFICAŢIA MARCAJELOR ORIZONTALE, C. Alte marcaje, 1.17).

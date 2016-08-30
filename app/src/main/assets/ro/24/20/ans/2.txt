@@ -1,0 +1,1 @@
+﻿Reducerea eficacităţii de decelerare, în cazul frânării intensive, necesare pentru evitarea impactului.

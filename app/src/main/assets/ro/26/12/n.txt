@@ -1,0 +1,3 @@
+﻿Autoturismul verde, care se apropie de intersecţie pe drumul cu prioritate din dreapta autoturismului galben, va trece intersecţia concomitent cu autoturismul roşu, deoarece traiectoriile lor de deplasare nu se intersectează. Apoi, pe rând vor trece intersecţia: apropiindu-se pe drumul cu prioritate - autoturismul galben şi cel alb de pe drumul fără prioritate.
+
+P. 561), P. 59 2), 3), 4).

@@ -1,0 +1,3 @@
+﻿Vă apropiaţi de intersecţie pe drumul cu prioritate. Având intenţia să viraţi la stânga veţi ceda trecerea autoturismului, care pe drumul cu prioritate se apropie de intersecţie din dreapta. Camionul, ce se deplasează pe drumul fără prioritate, va trece intersecţia ultimul.
+
+P. 59 2), 3), 4).

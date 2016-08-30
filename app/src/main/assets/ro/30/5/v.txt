@@ -1,0 +1,1 @@
+﻿Linia îngustă discontinuă, la care lungimea haşurilor este de trei ori mai mică decât intervalele dintre acestea, în situaţia din imagine:

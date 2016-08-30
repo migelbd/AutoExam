@@ -1,0 +1,1 @@
+﻿A cedat trecerea numai vehiculelor care se apropia de intersecţie din dreapta.

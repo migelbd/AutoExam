@@ -1,0 +1,3 @@
+﻿Pentru a evita frânarea bruscă sau alte situaţii de urgenţă, timpul semnalului verde poate fi cronometrat. În cazul dat, cifrele de pe tabloul instalat deasupra semaforului semnifică timpul (în secunde), disponibil până la schimbarea semnalului.
+
+P. 20 3).

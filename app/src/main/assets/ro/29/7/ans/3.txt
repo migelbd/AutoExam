@@ -1,0 +1,1 @@
+﻿Acordă prioritate de deplasare în direcţia săgeţii.

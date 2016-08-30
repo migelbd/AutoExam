@@ -1,0 +1,1 @@
+﻿Vehiculelor; viteza cărora prin construcţie sau din alte motive, este mai mică de 60 km/h.

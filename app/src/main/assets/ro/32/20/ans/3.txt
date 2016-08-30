@@ -1,0 +1,1 @@
+﻿Conducătorul, înainte de a vira, va deplasa ansamblul de vehicule spre stânga, pentru a evita intrarea cu roata din dreapta din spate pe bordură, întrucât în timpul virajului roţile din spate ale acestuia se deplasează pe o traiectorie cu o rază mai mică.

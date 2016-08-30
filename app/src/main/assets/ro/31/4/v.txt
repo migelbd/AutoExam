@@ -1,0 +1,1 @@
+﻿Precizaţi dacă se permite intersectarea liniei continue a marcajului rutier, care delimitează locurile de staţionare a vehiculelor?

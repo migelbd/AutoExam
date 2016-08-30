@@ -1,0 +1,3 @@
+﻿În cazul dat, al doilea va traversa intersecţia conducătorul motocicletei, după ce va ceda trecerea conducătorului camionului care se apropie din dreapta lui. Conducătorul autoturismului va traversa intersecţia ultimul.
+
+P. 59 4).

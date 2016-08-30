@@ -1,0 +1,3 @@
+﻿Marcajul 1.23 în formă de inscripţie «BUS», determină banda destinată circulaţiei vehiculelor de rută. Prin urmare, în cazul dat, pe banda de circulaţie extremă dreapta, deplasarea este permisă numai acestor vehicule.
+
+Nota explicativă la anexa nr.4 (I. SEMNIFICAŢIA MARCAJELOR ORIZONTALE, C. Alte marcaje, 1.23).

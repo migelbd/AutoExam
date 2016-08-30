@@ -1,0 +1,3 @@
+﻿Indicatorul 1.25.2 «Căderi de pietre din partea dreaptă» cu panoul adiţional 6.3.2 «Sfârșitul zonei de acţiune», instalat sub indicator, determină sfârșitul sectorului de drum periculos pe care sunt posibile avalanşe, alunecări de teren sau căderi de pietre pe partea dreaptă a drumului. Pentru a confirma aflarea în limitele sectorului de drum periculos sau pentru a indica lungimea acestui sector, se folosesc alte panouri adiţionale.
+
+Nota explicativă la anexa nr. 3 (I. INDICATOARE DE AVERTIZARE, 1.25.2, VI. INDICATOARE DE INFORMARE SUPLIMENTARĂ /PANOURI ADIŢIONALE/, 6.3.2, Particularităţi de utilizare a panourilor adiţionale).

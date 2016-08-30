@@ -1,0 +1,1 @@
+﻿Întreruperea deplasării vehiculului la semnalul de interzicere al agentului de circulaţie, semaforului, la indicator sau pentru a ceda trecerea vehiculului (pietonului) ce are prioritate.

@@ -1,0 +1,3 @@
+﻿Primul va traversa intersecţia autoturismul verde, deoarece din dreapta acestuia de intersecţie nu se apropie alte vehicule. Apoi, conducându-se de aceeaşi regulă, va trece intersecţia autoturismul albastru concomitent cu microbuzul. Ultimul va traversa intersecţia autoturismul galben.
+
+P. 59 4).

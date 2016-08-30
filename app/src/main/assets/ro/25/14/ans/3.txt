@@ -1,0 +1,1 @@
+﻿Punerea în funcţiune a avertizorului de avarie, precum şi comutarea luminii farurilor.

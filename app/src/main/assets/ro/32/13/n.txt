@@ -1,0 +1,3 @@
+﻿Intersecţia în care în semafoare funcţionează semnalul galben intermitent se consideră intersecţie cu circulaţia nedirijată. Autoturismul va traversa intersecţia primul, deoarece traiectoria de mers a acestuia nu se intersectează cu traiectoria camionului care se apropie de intersecţie din dreapta. Ulterior, pe rând, vor trece intersecţia microbuzul înainte şi camionul la stânga.
+
+P. 56 2), alineatul 1, P. 59 1), 4).

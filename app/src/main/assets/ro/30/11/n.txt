@@ -1,0 +1,3 @@
+﻿Intersecţia în care semafoarele funcţionează la semnalul galben intermitent se consideră intersecţie cu circulaţia nedirijată. În situaţia dată, primul va trece autoturismul negru care se apropie de intersecţie pe drumul cu prioritate. Autoturismul roşu, care virează la stânga şi, de asemenea, se apropie de intersecţie pe drumul cu prioritate, va trece al doilea. Autoturismul albastru, deplasându-se pe drumul fără prioritate, va trece intersecţia ultimul.
+
+P. 56 2), alineatul 1, P. 59 1), 2).

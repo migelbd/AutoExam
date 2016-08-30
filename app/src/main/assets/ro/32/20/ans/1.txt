@@ -1,0 +1,1 @@
+﻿Ansamblul de vehicule va manevra ca orice autoturism.

@@ -1,0 +1,3 @@
+﻿Primul va traversa intersecţia autoturismul albastru, deoarece din dreapta acestuia de intersecţie nu se apropie alte vehicule. Apoi pe rând, conducându-se de aceiaşi regulă, intersecţia vor trece autoturismele roşu şi verde.
+
+P. 59 4).

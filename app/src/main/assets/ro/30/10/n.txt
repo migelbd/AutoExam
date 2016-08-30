@@ -1,0 +1,3 @@
+﻿Vehiculele se depăşesc numai pe partea stânga. Prin urmare, în situaţia din imagine, camionul poate fi depăşit doar pe banda din stânga.
+
+P. 52 1), alineatul 1.

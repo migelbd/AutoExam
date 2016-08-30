@@ -1,0 +1,3 @@
+﻿Sistemul de frânare a oricărui autovehicul este calculat, ca să-i asigure acestuia, la masa maxima autorizată, un spaţiu minim de frânare. În cazul în care această masă maximă calculată este depăşită, eficacitatea frânelor se reduce, iar spaţiul de frânare creşte, factor care, în condiţii critice, poate conduce la producerea accidentului. De aceea, prin Regulament este interzisă remorcarea, în cazul în care frâna de serviciu la vehiculul remorcat este defectată, iar masa acestuia depăşeşte jumătate din masa reală a vehiculului tractor.
+
+P. 76 d).

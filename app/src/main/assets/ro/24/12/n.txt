@@ -1,0 +1,3 @@
+﻿Intersecţia în care semafoarele nu funcţionează se consideră intersecţie cu circulaţia nedirijată. În situaţia dată, primul va traversa intersecţia tramvaiul care se apropie de aceasta pe drumul cu prioritate, având drept primordial în condiţii egale de deplasare faţa de microbuz şi autoturism. Apoi, pe rând vor trece microbuzul şi autoturismul, deoarece la traversarea intersecţiei drumurilor de semnificaţie echivalenţă, acesta trebuie să cedeze trecerea microbuzului, ce se apropie de intersecţie din dreapta. Ultima va trece autocisterna care se apropie de intersecţie pe drumul fără prioritate.
+
+P. 56 4), P. 59 2), 3), 4).

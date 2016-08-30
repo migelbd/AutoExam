@@ -1,0 +1,1 @@
+﻿Interzic deplasarea pe banda extremă din dreapta, în cazul funcţionării semnalului verde al semaforului.

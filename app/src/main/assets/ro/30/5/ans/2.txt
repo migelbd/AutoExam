@@ -1,0 +1,1 @@
+﻿Separă sensurile de circulaţie în cazul în care drumul are două sau/trei benzi de circulaţie.

@@ -1,0 +1,1 @@
+﻿Să cedaţi trecerea camionului doar în cazul în care acesta, ieşind de la staţia de alimentare cu combustibil, se va deplasa la stânga.

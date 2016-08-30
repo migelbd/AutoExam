@@ -1,0 +1,1 @@
+﻿Se permite dacă viteza camionului este mai mică de 30 km/h.

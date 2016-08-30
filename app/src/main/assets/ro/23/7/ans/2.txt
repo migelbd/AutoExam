@@ -1,0 +1,1 @@
+﻿Permit trecerea în cazul în care, în limitele vizibilităţii, nu se vede nici un tren apropiindu-se de trecerea la nivel cu calea ferată.

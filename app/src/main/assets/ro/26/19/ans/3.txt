@@ -1,0 +1,1 @@
+﻿In acest caz eficacitatea frânelor de serviciu nu este influenţată, prin urmare spaţiul de frânare nu se modifică.

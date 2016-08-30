@@ -1,0 +1,3 @@
+﻿Intersecţia în care semafoarele nu funcţionează se consideră intersecţie cu circulaţia nedirijată. În situaţia dată, primul va trece microbuzul care se apropie de intersecţie pe drumul cu prioritate. Autocisterna, care virează la stânga şi, de asemenea, se apropie de intersecţie pe drumul cu prioritate, va trece după microbuz. Tramvaiul, care circulă pe drumul fără prioritate, având drept primordial la deplasarea concomitentă fata de autoturism, va trece intersecţia al treilea. Ultimul va trece autoturismul.
+
+P. 56 2), alineatul 1, P. 56 4), P. 59 1), 2).

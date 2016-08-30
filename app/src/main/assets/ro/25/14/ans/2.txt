@@ -1,0 +1,1 @@
+﻿Seria dintr-un semnal continuu urmat de trei semnale scurte ale claxonului.

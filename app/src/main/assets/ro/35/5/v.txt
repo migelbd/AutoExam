@@ -1,0 +1,1 @@
+﻿Precizaţi dacă se permite intersectarea liniei înguste discontinue, la care lungimea haşurilor este de două ori mai mică decât intervalele dintre acestea, ce delimitează marginea carosabilului?

@@ -1,0 +1,1 @@
+﻿Intersectarea cu linia de tramvai în afara intersecţiei, înaintea căreia este instalat un semafor.

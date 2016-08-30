@@ -1,0 +1,1 @@
+﻿Indică direcţiile de deplasare permise pe banda extremă din dreapta, la semnalul verde al semaforului.

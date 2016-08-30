@@ -1,0 +1,1 @@
+﻿Obligă virarea la dreapta la prima intersecţie.

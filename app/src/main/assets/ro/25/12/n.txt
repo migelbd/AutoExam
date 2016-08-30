@@ -1,0 +1,3 @@
+﻿Autoturismul ce se deplasează pe drumul cu prioritate va traversa intersecţia primul. Tramvaiul, care circulă pe drumul fără prioritate, având drept primordial în condiţii egale de deplasare faţa de motocicletă, va trece intersecţia al doilea. Motocicleta va traversa intersecţia ultima.
+
+P. 56 4), P. 59 2), 3).

@@ -1,0 +1,3 @@
+﻿Doar indicatorul 5.48.3 «Parcare subterană sau terestră etajată» poate fi utilizat pentru informarea despre prezenţa parcării subterane. Indicatoarele 5.48.1 «Parcare» şi 5.48.2 «Parcare rezervată» informează despre prezenţa parcărilor terestre.
+
+Nota explicativă la anexa nr. 3 (V. INDICATOARE DE INFORMARE ŞI ORIENTARE, a) Indicatoare de informare, 5.48.1 - 5.48.3).

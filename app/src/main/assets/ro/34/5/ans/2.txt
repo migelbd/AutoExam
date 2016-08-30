@@ -1,0 +1,1 @@
+﻿Delimitează benzile de circulaţie pe drumurile cu două sau mai multe benzi pe sens.

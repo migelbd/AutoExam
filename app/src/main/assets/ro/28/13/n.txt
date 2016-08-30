@@ -1,0 +1,3 @@
+﻿Prima va traversa intersecţia ambulanta, deoarece în cazul executării misiunii urgente de serviciu, aceasta are prioritate faţa de alte vehicule, apoi concomitent autoturismele verde şi albastru, întrucât traiectoriile de deplasare ale acestora nu se intersectează.
+
+P. 56 1), P. 105, P. 106 1).
