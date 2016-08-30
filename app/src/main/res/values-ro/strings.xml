@@ -7,18 +7,18 @@
     <string name="snack_bad">Greșit</string>
     <string name="snack_good">Corect</string>
     <string name="text_spin">Selectați bilet</string>
-    <string name="txt_bad">Erori:</string>
+    <string name="txt_bad">Greșele:</string>
     <string name="txt_good">Corect:</string>
     <string name="txt_question">Întrebare</string>
     <string name="txt_skip">Omit:</string>
     <string name="btn_start">Începe</string>
-    <string name="btn_mix_start">Amesteca</string>
+    <string name="btn_mix_start">Mix</string>
     <string name="btn_confirm">Confirma</string>
     <string name="action_skip">Sări</string>
     <string name="action_settings">Setările</string>
-    <string name="_result_txt_good">Corecta:</string>
+    <string name="_result_txt_good">Corect:</string>
     <string name="_result_text_bad">Selecția dvs:</string>
-    <string name="txt_res_err">Erori:</string>
+    <string name="txt_res_err">Greșele:</string>
     <string name="txt_res_good">A răspuns:</string>
     <string name="txt_res_no_ans">Fără răspuns:</string>
     <string name="txt_res_winner">Ați finalizat cu succes examenul</string>
@@ -62,4 +62,5 @@
         <item>Bilet 35</item>
 
     </string-array>
+    <string name="act_menu_lang">Limba</string>
 </resources>
